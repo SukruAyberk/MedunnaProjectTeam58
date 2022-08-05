@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="0.163">
-    <testcase classname="US003 Password Strength" name="TC01 Password Strength seviyesinin degistigi gorulmeli" time="0.043">
+<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="2.319">
+    <testcase classname="US003 Password Strength" name="TC01 Password Strength seviyesinin degistigi gorulmeli" time="2.174">
         <failure message="The scenario has pending or undefined step(s)" type="java.lang.Exception">
             <![CDATA[Given kullanici "medunnaUrl" anasayfasinda..................................undefined
 Then kullanici user sembolune basar.........................................skipped
 And kullanici "register" butonuna basar.....................................skipped
+And kucuk harf eklenince password strength kontrol eder.....................skipped
+And buyuk harf eklenince password strength kontrol eder.....................skipped
+And sayi eklenince password strength kontrol eder...........................skipped
+And ozel karakter password strength kontrol eder............................skipped
+And password uzunlugu en az 7 oldugunu kontrol eder.........................skipped
 And password strength seviyesinin degistigini kontrol eder..................skipped
 ]]>
         </failure>
