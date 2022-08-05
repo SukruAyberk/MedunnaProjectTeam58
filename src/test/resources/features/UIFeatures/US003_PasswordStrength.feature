@@ -4,7 +4,7 @@ Feature: US003 Password Strength
   Scenario: TC001 Password Strength seviyesinin degistigi gorulmeli
     Given kullanici "medunnaUrl" anasayfasinda
     Then kullanici user sembolune basar
-    And kullanici "register" butonuna basar
+    And kullanici register butonuna basar
     And kucuk harf eklenince password strength kontrol eder
     And buyuk harf eklenince password strength kontrol eder
     And sayi eklenince password strength kontrol eder

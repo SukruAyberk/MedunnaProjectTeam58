@@ -1,6 +1,7 @@
 package stepDefinitions.uiSteps;
 
 import com.github.javafaker.Faker;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
@@ -30,8 +31,8 @@ public class US003 {
         ayberk.user_symbol.click();
     }
 
-    @Then("kullanici {string} butonuna basar")
-    public void kullanici_butonuna_basar(String string) {
+    @And("kullanici register butonuna basar")
+    public void kullaniciRegisterButonunaBasar() {
         ayberk.register_button.click();
     }
 
@@ -156,6 +157,5 @@ public class US003 {
         System.out.println(actualPasswordLength);
         Assert.assertTrue(actualPasswordLength >= expectedPasswordLength);
     }
-
 
 }
