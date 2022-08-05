@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.time.Duration;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -111,7 +112,6 @@ public class Driver {
             }
         }
     }
-
 
 
     public static void waitAndSendTextWithDefaultTime(WebElement element, String text) {
@@ -287,6 +287,7 @@ public class Driver {
         Select objSelect = new Select(element);
         objSelect.selectByVisibleText(text);
     }
+
     //    Parameter1 : WebElement
 //    Parameter2:  int
 //    Driver.selectByIndex(dropdown element, 1)
@@ -294,6 +295,7 @@ public class Driver {
         Select objSelect = new Select(element);
         objSelect.selectByIndex(index);
     }
+
     //    Parameter1 : WebElement
 //    Parameter2:  String
 //    Driver.selectByIndex(dropdown element, "91303")
