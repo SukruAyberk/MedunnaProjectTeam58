@@ -36,6 +36,49 @@ public class US003 {
         ayberk.register_button.click();
     }
 
+    @And("kucuk harf {string} eklenince password strength kontrol eder")
+    public void kucukHarfEklenincePasswordStrengthKontrolEder(String kucukHarf) {
+        kucuk = kucukHarf;
+        ayberk.new_password_textbox.sendKeys(kucuk);
+
+        String actualStrengthBar1 = ayberk.strength_bar1.getAttribute("style");
+        String actualStrengthBar2 = ayberk.strength_bar2.getAttribute("style");
+        String actualStrengthBar3 = ayberk.strength_bar3.getAttribute("style");
+        String actualStrengthBar4 = ayberk.strength_bar4.getAttribute("style");
+        String actualStrengthBar5 = ayberk.strength_bar5.getAttribute("style");
+
+        String expectedStrengthBar1 = "background-color: rgb(255, 0, 0);";
+        String expectedStrengthBar2 = "background-color: rgb(221, 221, 221);";
+        String expectedStrengthBar3 = "background-color: rgb(221, 221, 221);";
+        String expectedStrengthBar4 = "background-color: rgb(221, 221, 221);";
+        String expectedStrengthBar5 = "background-color: rgb(221, 221, 221);";
+
+        //Scenariou outline ile yap
+        //A, AA, AAA, AAAA, AAAAA, AAAAAA, AAAAAAA
+        //5, 55, 555, 5555, 55555, 555555, 5555555
+        //-, --, ---, ----, -----, ------, -------
+        //Aşağıdaki durumlar için if else ile yap durumları kontrol et daha dinamik olur
+
+        /*
+        1. durum
+        aA5-
+
+        2. durum
+        aaAA55-
+
+        3. durum
+        aaaAAA5-
+
+        4. durum
+        aaaaAAAA5-
+
+        Bu 5 durum yeterli
+
+         */
+
+
+    }
+
     @Then("kucuk harf eklenince password strength kontrol eder")
     public void kucuk_harf_eklenince_password_strength_kontrol_eder() throws InterruptedException {
         kucuk = faker.name().firstName().toLowerCase();
@@ -60,8 +103,6 @@ public class US003 {
         softAssert.assertEquals(actualStrengthBar5, expectedStrengthBar5);
         softAssert.assertAll();
 
-        Thread.sleep(2000);
-        System.out.println("Küçük eklenmiş: " + kucuk);
     }
 
     @Then("buyuk harf eklenince password strength kontrol eder")
@@ -157,5 +198,6 @@ public class US003 {
         System.out.println(actualPasswordLength);
         Assert.assertTrue(actualPasswordLength >= expectedPasswordLength);
     }
+
 
 }
