@@ -20,4 +20,19 @@ public class AyberkPage {
     @FindBy(xpath = "//input[@name='firstPassword']")
     public WebElement new_password_textbox;
 
+    @FindBy(xpath = "(//ul[@id='strengthBar']/li)[1]")
+    public WebElement strength_bar1;
+
+    @FindBy(xpath = "(//ul[@id='strengthBar']/li)[2]")
+    public WebElement strength_bar2;
+
+    @FindBy(xpath = "(//ul[@id='strengthBar']/li)[3]")
+    public WebElement strength_bar3;
+
+    @FindBy(xpath = "(//ul[@id='strengthBar']/li)[4]")
+    public WebElement strength_bar4;
+
+    @FindBy(xpath = "(//ul[@id='strengthBar']/li)[5]")
+    public WebElement strength_bar5;
+
 }
