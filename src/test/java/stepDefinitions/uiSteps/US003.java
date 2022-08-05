@@ -9,7 +9,7 @@ import pages.AyberkPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 
-public class US003_US004 {
+public class US003 {
 
     AyberkPage ayberk = new AyberkPage();
     Faker faker = new Faker();

@@ -17,6 +17,12 @@ public class AyberkPage {
     @FindBy(xpath = "//*[text()='Register']")
     public WebElement register_button;
 
+    @FindBy(xpath = "//*[text()='Sign in']")
+    public WebElement sing_in_button;
+
+    @FindBy(id = "rememberMe")
+    public WebElement rememberMe_checkbox;
+
     @FindBy(xpath = "//input[@name='firstPassword']")
     public WebElement new_password_textbox;
 
