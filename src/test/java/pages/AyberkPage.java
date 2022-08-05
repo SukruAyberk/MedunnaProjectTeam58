@@ -18,7 +18,28 @@ public class AyberkPage {
     public WebElement register_button;
 
     @FindBy(xpath = "//*[text()='Sign in']")
-    public WebElement sing_in_button;
+    public WebElement sing_in_button1;
+
+    @FindBy(xpath = "(//*[text()='Sign in'])[3]")
+    public WebElement sing_in_button2;
+
+    @FindBy(xpath = "//*[text()='userTeam58 userTeam58']")
+    public WebElement userTeam58_symbol;
+
+    @FindBy(xpath = "//*[text()='Sign out']")
+    public WebElement sing_out_button;
+
+    @FindBy(xpath = "//*[text()='Did you forget your password?']")
+    public WebElement did_you_forget_your_password_button;
+
+    @FindBy(xpath = "//*[text()='Cancel']")
+    public WebElement cancel_button;
+
+    @FindBy(xpath = "//input[@id='username']")
+    public WebElement email;
+
+    @FindBy(xpath = "//input[@id='password']")
+    public WebElement password;
 
     @FindBy(id = "rememberMe")
     public WebElement rememberMe_checkbox;
