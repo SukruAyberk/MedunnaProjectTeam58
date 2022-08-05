@@ -9,9 +9,7 @@ import pages.AyberkPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 
-import java.util.Random;
-
-public class US003 {
+public class US003_US004 {
 
     AyberkPage ayberk = new AyberkPage();
     Faker faker = new Faker();
