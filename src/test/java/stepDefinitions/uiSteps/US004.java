@@ -1,5 +1,6 @@
 package stepDefinitions.uiSteps;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import pages.AyberkPage;
@@ -30,17 +31,6 @@ public class US004 {
         Assert.assertTrue(ayberk.cancel_button.isEnabled());
     }
 
-    @Then("{string} ve {string} girer")
-    public void ve_girer(String username, String password) {
-        ayberk.email.sendKeys(ConfigReader.getProperty(username));
-        ayberk.password.sendKeys(ConfigReader.getProperty(password));
-    }
-
-    @Then("giris yapar")
-    public void giris_yapar() {
-        ayberk.sing_in_button2.click();
-    }
-
     @Then("giris yaptigini dogrular")
     public void giris_yaptigini_dogrular() {
         ReusableMethods.waitForClickablility(ayberk.userTeam58_symbol, 15);
@@ -48,4 +38,35 @@ public class US004 {
         Assert.assertTrue(ayberk.sing_out_button.isEnabled());
     }
 
+    @And("sayfaya giris yapilamadigini test eder")
+    public void sayfayaGirisYapilamadiginiTestEder() {
+        ReusableMethods.waitForVisibility(ayberk.giris_yapilamadi_mesaji, 10);
+        Assert.assertTrue(ayberk.giris_yapilamadi_mesaji.isDisplayed());
+    }
+
+    @And("gecerli username {string} girer")
+    public void gecerliUsernameGirer(String username) {
+        ayberk.email.sendKeys(ConfigReader.getProperty(username));
+    }
+
+    @And("gecerli password {string} girer")
+    public void gecerliPasswordGirer(String password) {
+        ayberk.password.sendKeys(ConfigReader.getProperty(password));
+    }
+
+    @And("gecersiz username {string} girer")
+    public void gecersizUsernameGirer(String username) {
+        ayberk.email.sendKeys(ConfigReader.getProperty(username));
+
+    }
+
+    @And("gecersiz password {string} girer")
+    public void gecersizPasswordGirer(String password) {
+        ayberk.password.sendKeys(ConfigReader.getProperty(password));
+    }
+
+    @And("singin butonuna basar")
+    public void singinButonunaBasar() {
+        ayberk.sing_in_button2.click();
+    }
 }

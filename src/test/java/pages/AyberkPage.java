@@ -32,6 +32,9 @@ public class AyberkPage {
     @FindBy(xpath = "//*[text()='Did you forget your password?']")
     public WebElement did_you_forget_your_password_button;
 
+    @FindBy(xpath = "//*[text()='Failed to sign in!']")
+    public WebElement giris_yapilamadi_mesaji;
+
     @FindBy(xpath = "//*[text()='Cancel']")
     public WebElement cancel_button;
 
