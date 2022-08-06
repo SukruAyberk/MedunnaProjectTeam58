@@ -38,7 +38,7 @@ public class US003 {
 
 
     @Then("kucuk harf eklenince password strength kontrol eder")
-    public void kucuk_harf_eklenince_password_strength_kontrol_eder() {
+    public void kucuk_harf_eklenince_password_strength_kontrol_eder() throws InterruptedException {
         kucuk = faker.name().firstName().toLowerCase();
         ayberk.new_password_textbox.sendKeys(kucuk);
 
@@ -60,6 +60,9 @@ public class US003 {
         softAssert.assertEquals(actualStrengthBar4, expectedStrengthBar4);
         softAssert.assertEquals(actualStrengthBar5, expectedStrengthBar5);
         softAssert.assertAll();
+
+        Thread.sleep(1000);
+        System.out.println("kucuk eklenmiş: " + kucuk);
 
     }
 
@@ -88,7 +91,7 @@ public class US003 {
         softAssert.assertEquals(actualStrengthBar5, expectedStrengthBar5);
         softAssert.assertAll();
 
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         System.out.println("Büyük eklenmiş: " + kucuk + buyuk);
     }
 
@@ -117,12 +120,12 @@ public class US003 {
         softAssert.assertEquals(actualStrengthBar5, expectedStrengthBar5);
         softAssert.assertAll();
 
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         System.out.println("Sayı eklenmiş: " + kucuk + buyuk + sayi);
     }
 
     @Then("ozel karakter password strength kontrol eder")
-    public void ozel_karakter_password_strength_kontrol_eder() throws InterruptedException {
+    public void ozel_karakter_password_strength_kontrol_eder() {
         ozel = "*";
         ayberk.new_password_textbox.sendKeys(ozel);
 
@@ -146,7 +149,6 @@ public class US003 {
         softAssert.assertEquals(actualStrengthBar5, expectedStrengthBar5);
         softAssert.assertAll();
 
-        Thread.sleep(2000);
         System.out.println("Özel eklenmiş: " + kucuk + buyuk + sayi + ozel);
     }
 
