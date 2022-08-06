@@ -15,7 +15,7 @@ public class US003 {
     AyberkPage ayberk = new AyberkPage();
     Faker faker = new Faker();
 
-    String password;
+    String password = "";
     String kucuk;
     String buyuk;
     String sayi;
@@ -162,8 +162,9 @@ public class US003 {
     }
 
     @And("kucuk harf {string} eklenince password strength kontrol eder")
-    public void kucukHarfEklenincePasswordStrengthKontrolEder(String kucukHarf) {
+    public void kucukHarfEklenincePasswordStrengthKontrolEder(String kucukHarf) throws InterruptedException {
         kucuk = kucukHarf;
+        password += kucuk;
         ayberk.new_password_textbox.sendKeys(kucuk);
 
         String actualStrengthBar1 = ayberk.strength_bar1.getAttribute("style");
@@ -184,6 +185,9 @@ public class US003 {
         softAssert.assertEquals(actualStrengthBar4, expectedStrengthBar4);
         softAssert.assertEquals(actualStrengthBar5, expectedStrengthBar5);
         softAssert.assertAll();
+
+        Thread.sleep(1000);
+        System.out.println("kucuk eklenmiş: " + password);
 
         //Scenariou outline ile yap
         //A, AA, AAA, AAAA, AAAAA, AAAAAA, AAAAAAA
@@ -212,9 +216,9 @@ public class US003 {
     }
 
     @And("buyuk harf {string} eklenince password strength kontrol eder")
-    public void buyukHarfEklenincePasswordStrengthKontrolEder(String buyukHarf) {
+    public void buyukHarfEklenincePasswordStrengthKontrolEder(String buyukHarf) throws InterruptedException {
         buyuk = buyukHarf;
-        password = kucuk + buyuk;
+        password += buyuk;
         ayberk.new_password_textbox.sendKeys(buyuk);
 
         String actualStrengthBar1 = ayberk.strength_bar1.getAttribute("style");
@@ -254,10 +258,13 @@ public class US003 {
         }
         softAssert.assertAll();
 
+        Thread.sleep(1000);
+        System.out.println("buyuk eklenmiş: " + password);
+
     }
 
     @And("{string} eklenince password strength kontrol eder")
-    public void eklenincePasswordStrengthKontrolEder(String sayii) {
+    public void eklenincePasswordStrengthKontrolEder(String sayii) throws InterruptedException {
         sayi = sayii;
         password += sayi;
         ayberk.new_password_textbox.sendKeys(sayi);
@@ -299,11 +306,14 @@ public class US003 {
         }
         softAssert.assertAll();
 
+        Thread.sleep(1000);
+        System.out.println("sayi eklenmiş: " + password);
+
     }
 
 
     @And("ozel karakter {string} password strength kontrol eder")
-    public void ozelKarakterPasswordStrengthKontrolEder(String ozelKarakter) {
+    public void ozelKarakterPasswordStrengthKontrolEder(String ozelKarakter) throws InterruptedException {
         ozel = ozelKarakter;
         password += ozelKarakter;
         ayberk.new_password_textbox.sendKeys(ozel);
@@ -344,6 +354,9 @@ public class US003 {
             softAssert.assertTrue(password.length() >= 7);
         }
         softAssert.assertAll();
+
+        Thread.sleep(1000);
+        System.out.println("ozel eklenmiş: " + password);
     }
 
 

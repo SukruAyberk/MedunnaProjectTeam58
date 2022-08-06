@@ -20,7 +20,6 @@ Feature: US003 Password Strength
     And buyuk harf "<buyukharf>" eklenince password strength kontrol eder
     And "<sayi>" eklenince password strength kontrol eder
     And ozel karakter "<ozelkarakter>" password strength kontrol eder
-    And password uzunlugu en az 7 oldugunu kontrol eder
 
     Examples:
       | kucukharf | buyukharf | sayi | ozelkarakter |
