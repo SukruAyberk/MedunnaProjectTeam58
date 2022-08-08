@@ -95,6 +95,7 @@ public class US003 {
         System.out.println("Büyük eklenmiş: " + kucuk + buyuk);
     }
 
+
     @Then("sayi eklenince password strength kontrol eder")
     public void sayi_eklenince_password_strength_kontrol_eder() throws InterruptedException {
         sayi = "356";
