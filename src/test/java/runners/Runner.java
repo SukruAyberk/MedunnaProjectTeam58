@@ -8,15 +8,17 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         plugin = {
                 "pretty",
-                "html:target/default-cucumber-reports.html",
+                "html:target/cucumber-reports.html",
                 "json:target/json-reports/cucumber.json",
                 "junit:target/xml-report/cucumber.xml",
                 "rerun:target/failedRerun.txt"
         },
         features = "./src/test/resources/features/UIFeatures",
-        glue = {"hooks","Hooks"},
-        tags = "@us003",
-        dryRun = true
+
+        glue = {"stepDefinitions", "Hooks"},
+        tags = " @us004tc002",
+        dryRun = false
+
 )
 public class Runner {
 }

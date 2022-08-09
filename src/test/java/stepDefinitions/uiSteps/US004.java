@@ -21,6 +21,7 @@ public class US004 {
         Assert.assertTrue(ayberk.rememberMe_checkbox.isEnabled());
     }
 
+
     @Then("Did you forget your password secenegi oldugu kontrol eder")
     public void did_you_forget_your_password_secenegi_oldugu_kontrol_eder() {
         Assert.assertTrue(ayberk.did_you_forget_your_password_button.isEnabled());

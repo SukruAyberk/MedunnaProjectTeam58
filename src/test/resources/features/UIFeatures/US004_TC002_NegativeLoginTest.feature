@@ -1,5 +1,6 @@
 Feature: US004 Giris Sayfasi Erisimi
 
+  @us004tc002
   Scenario Outline:
     Given kullanici "medunnaUrl" anasayfasinda
     Then kullanici user sembolune basar
