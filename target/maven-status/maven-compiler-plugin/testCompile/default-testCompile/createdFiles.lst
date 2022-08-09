@@ -1,4 +1,5 @@
 pages\EmrePage.class
+pages\OrtakLocatePages.class
 stepDefinitions\apiSteps\US007.class
 stepDefinitions\uiSteps\OrtakClass.class
 stepDefinitions\uiSteps\US010.class

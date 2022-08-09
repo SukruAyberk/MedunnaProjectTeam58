@@ -14,9 +14,11 @@ import org.junit.runner.RunWith;
                 "rerun:target/failedRerun.txt"
         },
         features = "./src/test/resources/features/UIFeatures",
+
         glue = {"stepDefinitions", "Hooks"},
         tags = " @us004tc002",
         dryRun = false
+
 )
 public class Runner {
 }
