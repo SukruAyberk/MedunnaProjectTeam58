@@ -72,9 +72,12 @@ public class RecepCPage {
     @FindBy(xpath = "//div[@class='Toastify__toast-body']")
     public WebElement editSaveOnay;
 
-    @FindBy(className = "btn btn-success btn-sm")
-    public WebElement requestATest;
+    @FindBy(id = "hospitalmsappfrontendApp.appointment.home.createOrEditLabel")
+    public WebElement createOrEditPageYazi;
 
     @FindBy(xpath = "//tr/td[2]")
     public List<WebElement> testName;
+
+    @FindBy(xpath = "//a[@class='btn btn-success btn-sm']")
+    public WebElement requestATest;
 }
