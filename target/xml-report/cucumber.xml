@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="2" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="11" time="76.963">
+    <testcase classname="Registration Ozelligi" name="TC001" time="19.993">
+        <failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@class='Toastify__toast-body']&quot;}&#10;  (Session info: chrome=104.0.5112.81)&#10;For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element&#10;Build info: version: '4.1.3', revision: '7b1ebf28ef'&#10;System info: host: 'DESKTOP-I48IRU9', ip: '192.168.1.103', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.13'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [caddd76b11c0a4bef2e6646c342df936, findElement {using=xpath, value=//div[@class='Toastify__toast-body']}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.81, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: C:\Users\casper\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:64849}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:64849/devtoo..., se:cdpVersion: 104.0.5112.81, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: caddd76b11c0a4bef2e6646c342df936" type="org.openqa.selenium.NoSuchElementException">
+            <![CDATA[Given Kullanici Medunna ana sayfasina gider.................................passed
+And Kullanici Register butonuna tiklar......................................passed
+And Kullanici SSN kutusuna geçerli bir "SSN" numarasi girer.................passed
+And Kullanici firstname kutusuna geçerli bir "firstname" girer..............passed
+And Kullanici lastname kutusuna geçerli bir "lastname" girer................passed
+And Kullanici username kutusuna geçerli bir "username" girer................passed
+And Kullanici email kutusuna geçerli bir "email" girer......................passed
+And Kullanici password kutusuna geçerli bir "password" girer................passed
+Then Kullanici register butonuna tıklar.....................................passed
+Then Kullanici Registitaion Saved yazisinin gorunur oldugunu dogrular.......failed
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='Toastify__toast-body']"}
+  (Session info: chrome=104.0.5112.81)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.1.3', revision: '7b1ebf28ef'
+System info: host: 'DESKTOP-I48IRU9', ip: '192.168.1.103', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.13'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [caddd76b11c0a4bef2e6646c342df936, findElement {using=xpath, value=//div[@class='Toastify__toast-body']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.81, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: C:\Users\casper\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:64849}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:64849/devtoo..., se:cdpVersion: 104.0.5112.81, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: caddd76b11c0a4bef2e6646c342df936
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:385)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:377)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at com.sun.proxy.$Proxy21.isDisplayed(Unknown Source)
+	at stepDefinitions.uiSteps.US001.kullanici_registitaion_saved_yazisinin_gorunur_oldugunu_dogrular(US001.java:79)
+	at ✽.Kullanici Registitaion Saved yazisinin gorunur oldugunu dogrular(file:///C:/Users/casper/IdeaProjects/MedunnaProjectTeam58/./src/test/resources/features/UIFeatures/US001_Registration.feature:17)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="Registration Ozelligi" name="TC002" time="5.022">
+        <system-out>
+            <![CDATA[Given Kullanici Medunna ana sayfasina gider.................................passed
+And Kullanici Register butonuna tiklar......................................passed
+And Kullanici SSN kutusuna geçersiz bir "SSN" numarasi girer................passed
+And Kullanici firstname kutusuna geçerli bir "firstname" girer..............passed
+And Kullanici lastname kutusuna geçerli bir "lastname" girer................passed
+And Kullanici username kutusuna geçerli bir "username" girer................passed
+And Kullanici email kutusuna geçerli bir "email" girer......................passed
+And Kullanici password kutusuna geçerli bir "password" girer................passed
+Then Kullanici register butonuna tıklar.....................................passed
+Then Kullanici SSN hata mesajinin gorunur oldugunu dogrular.................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Registration Ozelligi" name="TC003" time="4.986">
+        <system-out>
+            <![CDATA[Given Kullanici Medunna ana sayfasina gider.................................passed
+And Kullanici Register butonuna tiklar......................................passed
+And Kullanici SSN kutusunu bos birakir......................................passed
+And Kullanici firstname kutusuna geçerli bir "firstname" girer..............passed
+And Kullanici lastname kutusuna geçerli bir "lastname" girer................passed
+And Kullanici username kutusuna geçerli bir "username" girer................passed
+And Kullanici email kutusuna geçerli bir "email" girer......................passed
+And Kullanici password kutusuna geçerli bir "password" girer................passed
+Then Kullanici register butonuna tıklar.....................................passed
+Then Kullanici bos SSN hata mesajinin gorunur oldugunu dogrular.............passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Registration Ozelligi" name="TC004" time="4.726">
+        <system-out>
+            <![CDATA[Given Kullanici Medunna ana sayfasina gider.................................passed
+And Kullanici Register butonuna tiklar......................................passed
+And Kullanici SSN kutusuna geçerli bir "SSN" numarasi girer.................passed
+And Kullanici firstname kutusunu bos birakir................................passed
+And Kullanici lastname kutusuna geçerli bir "lastname" girer................passed
+And Kullanici username kutusuna geçerli bir "username" girer................passed
+And Kullanici email kutusuna geçerli bir "email" girer......................passed
+And Kullanici password kutusuna geçerli bir "password" girer................passed
+Then Kullanici register butonuna tıklar.....................................passed
+Then Kullanici bos firstname hata mesajinin gorunur oldugunu dogrular.......passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Registration Ozelligi" name="TC005" time="4.911">
+        <system-out>
+            <![CDATA[Given Kullanici Medunna ana sayfasina gider.................................passed
+And Kullanici Register butonuna tiklar......................................passed
+And Kullanici SSN kutusuna geçerli bir "SSN" numarasi girer.................passed
+And Kullanici firstname kutusuna geçerli bir "firstname" girer..............passed
+And Kullanici lastname kutusunu bos birakir.................................passed
+And Kullanici username kutusuna geçerli bir "username" girer................passed
+And Kullanici email kutusuna geçerli bir "email" girer......................passed
+And Kullanici password kutusuna geçerli bir "password" girer................passed
+Then Kullanici register butonuna tıklar.....................................passed
+Then Kullanici bos lastname hata mesajinin gorunur oldugunu dogrular........passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Registration Ozelligi" name="TC006" time="7.575">
+        <failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@class='Toastify__toast-body']&quot;}&#10;  (Session info: chrome=104.0.5112.81)&#10;For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element&#10;Build info: version: '4.1.3', revision: '7b1ebf28ef'&#10;System info: host: 'DESKTOP-I48IRU9', ip: '192.168.1.103', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.13'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [caddd76b11c0a4bef2e6646c342df936, findElement {using=xpath, value=//div[@class='Toastify__toast-body']}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.81, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: C:\Users\casper\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:64849}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:64849/devtoo..., se:cdpVersion: 104.0.5112.81, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: caddd76b11c0a4bef2e6646c342df936" type="org.openqa.selenium.NoSuchElementException">
+            <![CDATA[Given Kullanici Medunna ana sayfasina gider.................................passed
+And Kullanici Register butonuna tiklar......................................passed
+And Kullanici SSN kutusuna dokuz ile başlayan bir "SSN" numarasi girer......passed
+And Kullanici firstname kutusuna geçerli bir "firstname" girer..............passed
+And Kullanici lastname kutusuna geçerli bir "lastname" girer................passed
+And Kullanici username kutusuna geçerli bir "username" girer................passed
+And Kullanici email kutusuna geçerli bir "email" girer......................passed
+And Kullanici password kutusuna geçerli bir "password" girer................passed
+Then Kullanici register butonuna tıklar.....................................passed
+Then Kullanici Registitaion Saved yazisinin gorunur oldugunu dogrular.......failed
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='Toastify__toast-body']"}
+  (Session info: chrome=104.0.5112.81)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.1.3', revision: '7b1ebf28ef'
+System info: host: 'DESKTOP-I48IRU9', ip: '192.168.1.103', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.13'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [caddd76b11c0a4bef2e6646c342df936, findElement {using=xpath, value=//div[@class='Toastify__toast-body']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.81, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: C:\Users\casper\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:64849}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:64849/devtoo..., se:cdpVersion: 104.0.5112.81, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: caddd76b11c0a4bef2e6646c342df936
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:385)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:377)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at com.sun.proxy.$Proxy21.isDisplayed(Unknown Source)
+	at stepDefinitions.uiSteps.US001.kullanici_registitaion_saved_yazisinin_gorunur_oldugunu_dogrular(US001.java:79)
+	at ✽.Kullanici Registitaion Saved yazisinin gorunur oldugunu dogrular(file:///C:/Users/casper/IdeaProjects/MedunnaProjectTeam58/./src/test/resources/features/UIFeatures/US001_Registration.feature:77)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="US002" name="TC001" time="7.674">
+        <system-out>
+            <![CDATA[Given Kullanici Medunna ana sayfasina gider.................................passed
+And Kullanici Register butonuna tiklar......................................passed
+And Kullanici SSN kutusuna geçerli bir "SSN" numarasi girer.................passed
+And Kullanici firstname kutusuna geçerli bir "firstname" girer..............passed
+And Kullanici lastname kutusuna geçerli bir "lastname" girer................passed
+And Kullanici username kutusuna geçerli bir "username" girer................passed
+And Kullanici email kutusuna geçerli bir "email" girer......................passed
+And Kullanici password kutusuna geçerli bir "password" girer................passed
+Then Kullanici register butonuna tıklar.....................................passed
+Then Kullanici Registitaion Saved yazisinin gorunur oldugunu dogrular.......passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="US002" name="TC002" time="4.464">
+        <system-out>
+            <![CDATA[Given Kullanici Medunna ana sayfasina gider.................................passed
+And Kullanici Register butonuna tiklar......................................passed
+And Kullanici SSN kutusuna geçerli bir "SSN" numarasi girer.................passed
+And Kullanici firstname kutusuna geçerli bir "firstname" girer..............passed
+And Kullanici lastname kutusuna geçerli bir "lastname" girer................passed
+And Kullanici username kutusunu bos birakir.................................passed
+And Kullanici email kutusuna geçerli bir "email" girer......................passed
+And Kullanici password kutusuna geçerli bir "password" girer................passed
+Then Kullanici register butonuna tıklar.....................................passed
+Then Kullanici bos username hata mesajinin gorunur oldugunu dogrular........passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="US002" name="TC003" time="7.665">
+        <system-out>
+            <![CDATA[Given Kullanici Medunna ana sayfasina gider.................................passed
+And Kullanici Register butonuna tiklar......................................passed
+And Kullanici SSN kutusuna geçerli bir "SSN" numarasi girer.................passed
+And Kullanici firstname kutusuna geçerli bir "firstname" girer..............passed
+And Kullanici lastname kutusuna geçerli bir "lastname" girer................passed
+And Kullanici username kutusuna geçerli bir "username" girer................passed
+And Kullanici email kutusuna geçerli bir "email" girer......................passed
+And Kullanici password kutusuna geçerli bir "password" girer................passed
+Then Kullanici register butonuna tıklar.....................................passed
+Then Kullanici Registitaion Saved yazisinin gorunur oldugunu dogrular.......passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="US002" name="TC004" time="4.547">
+        <system-out>
+            <![CDATA[Given Kullanici Medunna ana sayfasina gider.................................passed
+And Kullanici Register butonuna tiklar......................................passed
+And Kullanici SSN kutusuna geçerli bir "SSN" numarasi girer.................passed
+And Kullanici firstname kutusuna geçerli bir "firstname" girer..............passed
+And Kullanici lastname kutusuna geçerli bir "lastname" girer................passed
+And Kullanici username kutusuna geçerli bir "username" girer................passed
+And Kullanici email kutusunu bos birakir....................................passed
+And Kullanici password kutusuna geçerli bir "password" girer................passed
+Then Kullanici register butonuna tıklar.....................................passed
+Then Kullanici bos email hata mesajinin gorunur oldugunu dogrular...........passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="US002" name="TC005" time="4.71">
+        <system-out>
+            <![CDATA[Given Kullanici Medunna ana sayfasina gider.................................passed
+And Kullanici Register butonuna tiklar......................................passed
+And Kullanici SSN kutusuna geçerli bir "SSN" numarasi girer.................passed
+And Kullanici firstname kutusuna geçerli bir "firstname" girer..............passed
+And Kullanici lastname kutusuna geçerli bir "lastname" girer................passed
+And Kullanici username kutusuna geçerli bir "username" girer................passed
+And Kullanici email kutusuna gecersiz bir "email" girer.....................passed
+And Kullanici password kutusuna geçerli bir "password" girer................passed
+Then Kullanici register butonuna tıklar.....................................passed
+Then Kullanici gecersiz email hata mesajinin gorunur oldugunu dogrular......passed
+]]>
+        </system-out>
+    </testcase>
+</testsuite>
