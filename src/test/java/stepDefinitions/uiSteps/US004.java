@@ -45,15 +45,6 @@ public class US004 {
         Assert.assertTrue(ayberk.giris_yapilamadi_mesaji.isDisplayed());
     }
 
-    @And("gecerli username {string} girer")
-    public void gecerliUsernameGirer(String username) {
-        ayberk.email.sendKeys(ConfigReader.getProperty(username));
-    }
-
-    @And("gecerli password {string} girer")
-    public void gecerliPasswordGirer(String password) {
-        ayberk.password.sendKeys(ConfigReader.getProperty(password));
-    }
 
     @And("gecersiz username {string} girer")
     public void gecersizUsernameGirer(String username) {
