@@ -12,6 +12,9 @@ public class CigdemAPage {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
+    @FindBy(xpath = "(//a[@class='dropdown-item'])[3]")
+    public WebElement myInpatient;
+
     @FindBy(xpath = "//a[@class='btn btn-primary btn-sm']")
     public WebElement appointmentEditButonu;
 
@@ -23,6 +26,9 @@ public class CigdemAPage {
 
     @FindBy(xpath = "(//tr//th)[1]")
     public List<WebElement> idList;
+
+    @FindBy(xpath = "(//tr//th)[2]")
+    public List<WebElement> nameList;
 
     @FindBy(xpath = "(//tr//th)[4]")
     public List<WebElement> defaultMinValueList;
@@ -41,6 +47,9 @@ public class CigdemAPage {
 
     @FindBy(xpath ="//*[text()='Request Inpatient']")
     public WebElement requestInpatientButonu;
+
+    @FindBy(xpath = "//div[text()='InPatient request already done for this appointment']")
+    public WebElement inpatientMessage;
 
     @FindBy(xpath = "//*[text()='My Inpatients']")
     public WebElement myInpatientButonu;

@@ -11,8 +11,8 @@ public class OrtakLocatePages {
     @FindBy(xpath = "//li[@id='account-menu']")
     public WebElement profilSimgesi;
 
-    @FindBy(xpath = "//*[text()='Sign in']")
-    public WebElement signInSekmesi1;
+    @FindBy(xpath = "//a[@id='login-item']")
+    public WebElement signInButton1;
 
     @FindBy(xpath = "//input[@name='username']")
     public WebElement usernameBox;
