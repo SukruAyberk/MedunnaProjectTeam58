@@ -15,6 +15,7 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
 import java.util.function.Function;
 
 public class ReusableMethods {
@@ -144,6 +145,46 @@ public class ReusableMethods {
             }
         });
         return element;
+    }
+    public static String createSSN (){
+        Random rnd=new Random();
+        String SSN="";
+
+        int SSN1=rnd.nextInt(899);
+        int SSN2=rnd.nextInt(99);
+        int SSN3=rnd.nextInt(9999);
+
+        if (SSN1>99&&SSN2>9){
+            if(SSN3>999){
+                SSN=SSN1+"-"+SSN2+"-"+SSN3;
+
+            }
+        } else {
+            createSSN();
+        }
+
+        return SSN;
+    }
+
+    public static String invalidSSN (){
+        Random rnd=new Random();
+        String SSN="";
+
+        int SSN1=rnd.nextInt(999);
+        int SSN2=rnd.nextInt(99);
+        int SSN3=rnd.nextInt(9999);
+
+        if (SSN1>899&&SSN2>9){
+            if(SSN3>999){
+                SSN=SSN1+"-"+SSN2+"-"+SSN3;
+            }
+        }else if (SSN1<900){
+            invalidSSN();
+        } else {
+            invalidSSN();
+        }
+
+        return SSN;
     }
 
 }
