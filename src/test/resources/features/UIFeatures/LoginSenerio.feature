@@ -37,7 +37,7 @@
       Given user "medunnaUrl" anasayfasinda
       Then user user sembolune tiklar
       Then user singIn butonuna tiklar
-      Then user gecerli "UserInvalidUsername" ve "UserInvalidPassword" ile giris yapar
+      Then user gecerli "newUsername" ve "newUserPassword" ile giris yapar
       Then user sing in butonuna tiklar
 
 
