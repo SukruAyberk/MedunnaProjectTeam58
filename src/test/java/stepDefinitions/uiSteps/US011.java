@@ -20,27 +20,27 @@ import static utilities.ReusableMethods.*;
 public class US011 {
     RecepCPage medunnaPage = new RecepCPage();
 
-    @Given("Doktor {string} anasayfasinda")
-    public void doktor_anasayfasinda(String istenenurl) {
-        Driver.getDriver().get(ConfigReader.getProperty(istenenurl));
-    }
+  // @Given("Doktor {string} anasayfasinda")
+  // public void doktor_anasayfasinda(String istenenurl) {
+  //     Driver.getDriver().get(ConfigReader.getProperty(istenenurl));
+  // }
 
-    @Then("Doktor user sembolune basar")
-    public void doktor_user_sembolune_basar() {
-        medunnaPage.account.click();
-    }
+  // @Then("Doktor user sembolune basar")
+  // public void doktor_user_sembolune_basar() {
+  //     medunnaPage.account.click();
+  // }
 
-    @And("Doktor Signin butonuna basar")
-    public void doktorSigninButonunaBasar() {
-        medunnaPage.girisSignin.click();
-    }
+  // @And("Doktor Signin butonuna basar")
+  // public void doktorSigninButonunaBasar() {
+  //     medunnaPage.girisSignin.click();
+  // }
 
-    @Then("Doktor {string} username , {string} paswordu girer ve Sign in butonunu tiklar")
-    public void doktor_username_paswordu_girer_ve_sign_in_butonunu_tiklar(String username, String password) {
-        medunnaPage.username.sendKeys(ConfigReader.getProperty(username));
-        medunnaPage.password.sendKeys(ConfigReader.getProperty(password));
-        medunnaPage.kullaniciSigninButton.click();
-    }
+  // @Then("Doktor {string} username , {string} paswordu girer ve Sign in butonunu tiklar")
+  // public void doktor_username_paswordu_girer_ve_sign_in_butonunu_tiklar(String username, String password) {
+  //     medunnaPage.username.sendKeys(ConfigReader.getProperty(username));
+  //     medunnaPage.password.sendKeys(ConfigReader.getProperty(password));
+  //     medunnaPage.kullaniciSigninButton.click();
+  // }
 
     @Then("Doktor My Pages menusunden My Appointments butonunu tiklar")
     public void doktor_my_pages_menusunden_my_appointments_butonunu_tiklar() {

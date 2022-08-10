@@ -1,10 +1,11 @@
 Feature: US012 Doktor test isteyebilmeli
 
   Scenario: TC001 Doktor test isteyebilmeli
-    Given Doktor "medunnaUrl" anasayfasinda
-    And Doktor user sembolune basar
-    And Doktor Signin butonuna basar
-    And Doktor "Doctorusername" username , "DoctorPassword" paswordu girer ve Sign in butonunu tiklar
+    Given doktor "medunnaUrl" anasayfasinda
+    Then doktor profil sembolune tiklar
+    And doktor singIn sekmesi tiklar
+    Then doktor gecerli "Doctorsername" ve "DoctorPassword" ile giris yapar
+    Then doktor sing in butonuna tiklar
     And Doktor My Pages menusunden My Appointments butonunu tiklar
     And  Doktor "160942" id nolu hastasinin Edit buttonuna tiklar
     When Doktor Request A Test buttonuna tiklar
@@ -15,10 +16,11 @@ Feature: US012 Doktor test isteyebilmeli
 
   Scenario: TC002 Test Items Sayfasinda "Glucose, Urea, Creatinine, Sodium, Potassium, Total protein, Albumin, Hemoglobin" secenekleri olmali
 
-    Given Doktor "medunnaUrl" anasayfasinda
-    And Doktor user sembolune basar
-    And Doktor Signin butonuna basar
-    And Doktor "Doctorusername" username , "DoctorPassword" paswordu girer ve Sign in butonunu tiklar
+    Given doktor "medunnaUrl" anasayfasinda
+    Then doktor profil sembolune tiklar
+    And doktor singIn sekmesi tiklar
+    Then doktor gecerli "Doctorsername" ve "DoctorPassword" ile giris yapar
+    Then doktor sing in butonuna tiklar
     And Doktor My Pages menusunden My Appointments butonunu tiklar
     And  Doktor "160942" id nolu hastasinin Edit buttonuna tiklar
     When Doktor Request A Test buttonuna tiklar
