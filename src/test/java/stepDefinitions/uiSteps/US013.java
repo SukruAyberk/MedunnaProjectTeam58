@@ -1,8 +1,10 @@
 package stepDefinitions.uiSteps;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.Keys;
+import org.testng.Assert;
 import pages.CigdemAPage;
 import pages.OrtakLocatePages;
 import utilities.ConfigReader;
@@ -25,14 +27,14 @@ public class US013 {
 
     @Then("kullanici sing in butonuna tiklar")
     public void kullanici_sing_in_butonuna_tiklar() throws InterruptedException {
-        ortakLocatePages.signInSekmesi1.click();
+        ortakLocatePages.signInButton1.click();
         Thread.sleep(2000);
     }
 
     @Then("kullanici gecerli username ve password ile giris yapar")
     public void kullanici_gecerli_username_ve_password_ile_giris_yapar() throws InterruptedException {
-        ortakLocatePages.usernameBox.sendKeys(ConfigReader.getProperty("Doctorusername"));
-        ortakLocatePages.passwordBox.sendKeys(ConfigReader.getProperty("Doctorpassword"));
+        ortakLocatePages.usernameBox.sendKeys("cigdemgurbuz");
+        ortakLocatePages.passwordBox.sendKeys("1qaz2wsx.C");
         ortakLocatePages.signInButonu2.submit();
         Thread.sleep(2000);
     }
@@ -55,20 +57,40 @@ public class US013 {
         Thread.sleep(2000);
     }
 
-    @Then("kullanici Show Result butonuna tiklar")
-    public void kullanici_show_result_butonuna_tiklar() throws InterruptedException {
-        cigdemAPage.showTestResultButonu.click();
-        Thread.sleep(2000);
+
+    @Then("kullanici Request Inpatient isteginde bulunur")
+    public void kullaniciRequestInpatientIstegindeBulunur() throws InterruptedException {
+        cigdemAPage.requestInpatientButonu.click();
+        cigdemAPage.inpatientMessage.isDisplayed();
+
+       // Thread.sleep(4000);
+       // String expectedText="InPatient request already done for this appointment";
+       // String actualText= Driver.getDriver().switchTo().alert().getText();
+//
+       // Assert.assertEquals(expectedText, actualText,"Yatili hasta isteginde bulunuldu");
     }
 
-    @Then("kullanici View Result butonuna tiklar")
-    public void kullanici_view_result_butonuna_tiklar() throws InterruptedException {
+    @And("doktor hastaya ait bilgileri gorur")
+    public void doktorHastayaAitBilgileriGorur() {
+        cigdemAPage.idList.isEmpty();
+        cigdemAPage.nameList.isEmpty();
+        cigdemAPage.defaultMaxValueList.isEmpty();
+        cigdemAPage.defaultMinValueList.isEmpty();
+        cigdemAPage.testList.isEmpty();
+        cigdemAPage.descriptionList.isEmpty();
+        cigdemAPage.dateList.isEmpty();
+    }
+
+    @And("doktor View Result butonuna tiklar")
+    public void doktorViewResultButonunaTiklar() throws InterruptedException {
         cigdemAPage.viewResultButonu.click();
         Thread.sleep(2000);
+
     }
 
-    @Then("kullanici hastaya ait bilgileri gorur")
-    public void kullanici_hastaya_ait_bilgileri_gorur() {
-
+    @Then("doktor Show Result butonuna tiklar")
+    public void doktorShowResultButonunaTiklar() throws InterruptedException {
+        cigdemAPage.showTestResultButonu.click();
+        Thread.sleep(2000);
     }
 }
