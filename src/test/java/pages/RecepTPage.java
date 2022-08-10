@@ -46,4 +46,5 @@ public class RecepTPage {
     public  WebElement errorBlankEmailMessage;
     @FindBy(xpath = "//*[text()='This field is invalid']")
     public WebElement errorInvalidEmailMessage;
+
 }

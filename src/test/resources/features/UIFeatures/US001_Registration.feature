@@ -2,6 +2,7 @@
 @US001-US002
 Feature: Registration Ozelligi
 
+
   @US001_UIRegistration
   Scenario: TC001
     Given Kullanici Medunna ana sayfasina gider

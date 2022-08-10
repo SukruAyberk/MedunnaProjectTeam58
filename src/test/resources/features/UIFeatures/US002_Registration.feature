@@ -2,6 +2,7 @@
 @US001-US002
 Feature:US002
 
+
   Scenario:TC001
     Given Kullanici Medunna ana sayfasina gider
     And Kullanici Register butonuna tiklar
