@@ -1,8 +1,10 @@
 package stepDefinitions.uiSteps;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.Keys;
+import org.testng.Assert;
 import pages.CigdemAPage;
 import pages.OrtakLocatePages;
 import utilities.ConfigReader;
@@ -12,63 +14,49 @@ public class US013 {
     OrtakLocatePages ortakLocatePages=new OrtakLocatePages();
     CigdemAPage cigdemAPage=new CigdemAPage();
 
-    @Given("kullanici Url'e gider")
-    public void kullanici_url_e_gider() {
-        Driver.getDriver().get(ConfigReader.getProperty("medunnaUrl"));
+    @Then("doktor My Pages menusune tiklar")
+    public void doktor_my_pages_menusune_tiklar() {
+        ortakLocatePages.myPagesButonu.click();
     }
-
-    @Then("kullanici profil simgesine tiklar")
-    public void kullanici_profil_simgesine_tiklar() throws InterruptedException {
-       ortakLocatePages.profilSimgesi.click();
-       Thread.sleep(2000);
-    }
-
-    @Then("kullanici sing in butonuna tiklar")
-    public void kullanici_sing_in_butonuna_tiklar() throws InterruptedException {
-        ortakLocatePages.signInSekmesi1.click();
-        Thread.sleep(2000);
-    }
-
-    @Then("kullanici gecerli username ve password ile giris yapar")
-    public void kullanici_gecerli_username_ve_password_ile_giris_yapar() throws InterruptedException {
-        ortakLocatePages.usernameBox.sendKeys(ConfigReader.getProperty("Doctorusername"));
-        ortakLocatePages.passwordBox.sendKeys(ConfigReader.getProperty("Doctorpassword"));
-        ortakLocatePages.signInButonu2.submit();
-        Thread.sleep(2000);
-    }
-
-    @Then("kullanici My Pages menusune tiklar")
-    public void kullanici_my_pages_menusune_tiklar() throws InterruptedException {
-      ortakLocatePages.myPagesButonu.click();
-      Thread.sleep(2000);
-    }
-
-    @Then("kullanici My Appointments sekmesine tiklar")
-    public void kullanici_my_appointments_sekmesine_tiklar() throws InterruptedException {
+    @Then("doktor My Appointments sekmesine tiklar")
+    public void doktor_my_appointments_sekmesine_tiklar() {
         ortakLocatePages.myAppointmentsButonu.click();
-        Thread.sleep(2000);
     }
-
-    @Then("kullaici My Appointments sayfasindaki Edit butonuna tiklar")
-    public void kullaici_my_appointments_sayfasindaki_edit_butonuna_tiklar() throws InterruptedException {
+    @Then("doktor My Appointments sayfasindaki Edit butonuna tiklar")
+    public void doktor_my_appointments_sayfasindaki_edit_butonuna_tiklar() {
         cigdemAPage.appointmentEditButonu.click();
-        Thread.sleep(2000);
+    }
+    @Then("doktor sayfayi kapatir")
+    public void doktor_sayfayi_kapatir() {
+        Driver.closeDriver();
+    }
+    @Then("doktor Request Inpatient isteginde bulunur")
+    public void doktor_request_ınpatient_isteginde_bulunur() {
+        cigdemAPage.requestInpatientButonu.click();
+        cigdemAPage.inpatientMessage.isDisplayed();
     }
 
-    @Then("kullanici Show Result butonuna tiklar")
-    public void kullanici_show_result_butonuna_tiklar() throws InterruptedException {
-        cigdemAPage.showTestResultButonu.click();
-        Thread.sleep(2000);
+    @And("doktor hastaya ait bilgileri gorur")
+    public void doktorHastayaAitBilgileriGorur() {
+        cigdemAPage.idList.isEmpty();
+        cigdemAPage.nameList.isEmpty();
+        cigdemAPage.defaultMaxValueList.isEmpty();
+        cigdemAPage.defaultMinValueList.isEmpty();
+        cigdemAPage.testList.isEmpty();
+        cigdemAPage.descriptionList.isEmpty();
+        cigdemAPage.dateList.isEmpty();
     }
 
-    @Then("kullanici View Result butonuna tiklar")
-    public void kullanici_view_result_butonuna_tiklar() throws InterruptedException {
+    @And("doktor View Result butonuna tiklar")
+    public void doktorViewResultButonunaTiklar() throws InterruptedException {
         cigdemAPage.viewResultButonu.click();
         Thread.sleep(2000);
+
     }
 
-    @Then("kullanici hastaya ait bilgileri gorur")
-    public void kullanici_hastaya_ait_bilgileri_gorur() {
-
+    @Then("doktor Show Result butonuna tiklar")
+    public void doktorShowResultButonunaTiklar() throws InterruptedException {
+        cigdemAPage.showTestResultButonu.click();
+        Thread.sleep(2000);
     }
 }

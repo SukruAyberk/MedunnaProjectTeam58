@@ -163,6 +163,7 @@ public class US003 {
 
     @And("kucuk harf {string} eklenince password strength kontrol eder")
     public void kucukHarfEklenincePasswordStrengthKontrolEder(String kucukHarf) throws InterruptedException {
+
         kucuk = kucukHarf;
         password += kucuk;
         ayberk.new_password_textbox.sendKeys(kucuk);
