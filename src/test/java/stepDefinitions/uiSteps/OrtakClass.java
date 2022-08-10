@@ -24,8 +24,8 @@ public class OrtakClass {
        Thread.sleep(2000);
        ortakLocatePages.userDropdownDogrulama.isDisplayed();
     }
-    @Then("admin singIn butonuna tiklar")
-    public void adminSingInButonunaTiklar() {
+    @Then("admin singIn sekmesi tiklar")
+    public void admin_sing_in_sekmesi_tiklar() {
         ortakLocatePages.signInButton1.click();
         ortakLocatePages.signInYazisi.isDisplayed();
     }
@@ -56,8 +56,8 @@ public class OrtakClass {
         Thread.sleep(2000);
         ortakLocatePages.userDropdownDogrulama.isDisplayed();
     }
-    @Then("staff singIn butonuna tiklar")
-    public void staff_sing_ın_butonuna_tiklar() {
+    @Then("staff singIn sekmesi tiklar")
+    public void staff_sing_in_sekmesi_tiklar() {
       ortakLocatePages.signInButton1.click();
       ortakLocatePages.signInYazisi.isDisplayed();
     }
@@ -88,8 +88,8 @@ public class OrtakClass {
         Thread.sleep(2000);
         ortakLocatePages.userDropdownDogrulama.isDisplayed();
     }
-    @Then("doktor singIn butonuna tiklar")
-    public void doktorSingInButonunaTiklar() {
+    @Then("doktor singIn sekmesi tiklar")
+    public void doktor_sing_in_sekmesi_tiklar() {
         ortakLocatePages.signInButton1.click();
         ortakLocatePages.signInYazisi.isDisplayed();
     }
@@ -120,8 +120,8 @@ public class OrtakClass {
         Thread.sleep(2000);
         ortakLocatePages.userDropdownDogrulama.isDisplayed();
     }
-    @Then("patient singIn butonuna tiklar")
-    public void patientSingInButonunaTiklar() {
+    @Then("patient singIn sekmesi tiklar")
+    public void patient_sing_in_sekmesi_tiklar() {
         ortakLocatePages.signInButton1.click();
         ortakLocatePages.signInYazisi.isDisplayed();
     }
@@ -152,8 +152,8 @@ public class OrtakClass {
         Thread.sleep(2000);
         ortakLocatePages.userDropdownDogrulama.isDisplayed();
     }
-    @Then("user singIn butonuna tiklar")
-    public void userSingInButonunaTiklar() {
+    @Then("user singIn sekmesi tiklar")
+    public void user_sing_in_sekmesi_tiklar() {
         ortakLocatePages.signInButton1.click();
         ortakLocatePages.signInYazisi.isDisplayed();
     }

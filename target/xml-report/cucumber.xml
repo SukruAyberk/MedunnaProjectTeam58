@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="19.915">
-    <testcase classname="Medunna Login" name="Medunna User Girisi" time="19.669">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="16.794">
+    <testcase classname="Medunna Login" name="Medunna Doktor Girisi" time="16.56">
         <system-out>
-            <![CDATA[Given user "medunnaUrl" anasayfasinda.......................................passed
-Then user user sembolune tiklar.............................................passed
-Then user singIn butonuna tiklar............................................passed
-Then user gecerli "newUsername" ve "newUserPassword" ile giris yapar........passed
-Then user sing in butonuna tiklar...........................................passed
+            <![CDATA[Given doktor "medunnaUrl" anasayfasinda.....................................passed
+Then doktor profil sembolune tiklar.........................................passed
+Then doktor singIn sekmesi tiklar...........................................passed
+Then doktor gecerli "Doctorsername" ve "DoctorPassword" ile giris yapar.....passed
+Then doktor sing in butonuna tiklar.........................................passed
 ]]>
         </system-out>
     </testcase>
