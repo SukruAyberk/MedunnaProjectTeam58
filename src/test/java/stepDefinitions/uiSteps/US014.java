@@ -59,6 +59,7 @@ public class US014 {
             each.click();
         }
         System.out.println("statuler = " + statuler);
+        Driver.closeDriver();
     }
    /* @Given("kullanici Url'e gider")
     public void kullanici_url_e_gider() {
