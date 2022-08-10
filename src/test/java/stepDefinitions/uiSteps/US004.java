@@ -21,6 +21,7 @@ public class US004 {
         Assert.assertTrue(ayberk.rememberMe_checkbox.isEnabled());
     }
 
+
     @Then("Did you forget your password secenegi oldugu kontrol eder")
     public void did_you_forget_your_password_secenegi_oldugu_kontrol_eder() {
         Assert.assertTrue(ayberk.did_you_forget_your_password_button.isEnabled());
@@ -44,15 +45,6 @@ public class US004 {
         Assert.assertTrue(ayberk.giris_yapilamadi_mesaji.isDisplayed());
     }
 
-    @And("gecerli username {string} girer")
-    public void gecerliUsernameGirer(String username) {
-        ayberk.email.sendKeys(ConfigReader.getProperty(username));
-    }
-
-    @And("gecerli password {string} girer")
-    public void gecerliPasswordGirer(String password) {
-        ayberk.password.sendKeys(ConfigReader.getProperty(password));
-    }
 
     @And("gecersiz username {string} girer")
     public void gecersizUsernameGirer(String username) {

@@ -4,10 +4,14 @@ import io.cucumber.java.en.*;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
 import pages.EmrePage;
 import utilities.ConfigReader;
 import utilities.Driver;
+
+import java.util.function.Function;
 
 
 public class US005 {
@@ -22,11 +26,9 @@ public class US005 {
     String hastaTel="1231231234";
 
 
-    @Given("Kullanici www.medunna.com adresine gider")
-    public void kullanici_www_medunna_com_adresine_gider() {
-        Driver.getDriver().get(ConfigReader.getProperty("medunnaUrl"));
 
-    }
+
+
     @Then("Kullanici Make an Appointment butonuna tiklar")
     public void kullanici_kullanici_make_an_appointment_butonuna_tiklar() {
         emre.makeAppointmentButton.click();
@@ -79,11 +81,9 @@ public class US005 {
     }
     //____________________________SECOND SCENARIO START______________________________
 
-    @Given("Kullanici {string} adresine gider")
-    public void kullanici_adresine_gider(String string) {
-        Driver.getDriver().get(ConfigReader.getProperty("medunnaUrl"));
 
-    }
+
+
     @Then("Kullanici tekrar Make an Appointment butonuna tiklar")
     public void kullanici_tekrar_make_an_appointment_butonuna_tiklar() throws InterruptedException {
         emre.makeAppointmentButton.click();
@@ -123,15 +123,14 @@ public class US005 {
         emre.phoneButton.sendKeys(hastaTel);
     }
     @Then("Kullanici {string} butonuna tiklayarak randevu alir")
-    public void kullanici_butonuna_tiklayarak_randevu_alir(String string) {
+    public void kullanici_butonuna_tiklayarak_randevu_alir(String string) throws InterruptedException {
         emre.sendAnRequestButton.click();
+        Thread.sleep(3000);
 
     }
     @Then("Kullanici çıkan kaydınız oluşturuldu mesajını görerek kaydı tamamlar")
-    public void kullanici_cikan_kaydiniz_olusturuldu_mesajini_gorerek_kaydi_tamamlar(String string) {
+    public void kullanici_cikan_kaydiniz_olusturuldu_mesajini_gorerek_kaydi_tamamlar() {
 
-        String alertMessage = driver.switchTo().alert().getText();
-        System.out.print(alertMessage);
-
+        emre.appointmentAlertMessage.isDisplayed();
     }
 }

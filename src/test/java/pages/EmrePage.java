@@ -52,6 +52,9 @@ public class EmrePage {
     @FindBy(xpath = "//button[@class='btn btn-primary']")
     public WebElement sendAnRequestButton;
 
+    @FindBy (xpath = "//*[text()='Appointment registration saved!']")
+    public WebElement appointmentAlertMessage;
+
 
 
 
