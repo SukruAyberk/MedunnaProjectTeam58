@@ -1,5 +1,5 @@
 package pages;
 
-public class ElvinaPage {
+public class ElvinaPage{
 
 }
