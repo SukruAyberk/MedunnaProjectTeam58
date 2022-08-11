@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="32.413">
+    <testcase classname="US013 Doktor Test Result islemleri yapabilmeli" name="TC001 Doktor hastalarin test sonuc bilgilerini gorebilmeli" time="32.07">
+        <system-out>
+            <![CDATA[Given doktor "medunnaUrl" anasayfasinda.....................................passed
+Then doktor profil sembolune tiklar.........................................passed
+Then doktor singIn sekmesi tiklar...........................................passed
+Then doktor gecerli "Doctorsername" ve "DoctorPassword" ile giris yapar.....passed
+Then doktor sing in butonuna tiklar.........................................passed
+Then doktor My Pages menusune tiklar........................................passed
+And doktor My Appointments sekmesine tiklar.................................passed
+And doktor My Appointments sayfasindaki Edit butonuna tiklar................passed
+Then doktor Show Result butonuna tiklar.....................................passed
+And doktor View Result butonuna tiklar......................................passed
+And doktor hastaya ait bilgileri gorur......................................passed
+]]>
+        </system-out>
+    </testcase>
+</testsuite>
