@@ -6,6 +6,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.asserts.SoftAssert;
@@ -19,28 +20,6 @@ import static utilities.ReusableMethods.*;
 
 public class US011 {
     RecepCPage medunnaPage = new RecepCPage();
-
-  // @Given("Doktor {string} anasayfasinda")
-  // public void doktor_anasayfasinda(String istenenurl) {
-  //     Driver.getDriver().get(ConfigReader.getProperty(istenenurl));
-  // }
-
-  // @Then("Doktor user sembolune basar")
-  // public void doktor_user_sembolune_basar() {
-  //     medunnaPage.account.click();
-  // }
-
-  // @And("Doktor Signin butonuna basar")
-  // public void doktorSigninButonunaBasar() {
-  //     medunnaPage.girisSignin.click();
-  // }
-
-  // @Then("Doktor {string} username , {string} paswordu girer ve Sign in butonunu tiklar")
-  // public void doktor_username_paswordu_girer_ve_sign_in_butonunu_tiklar(String username, String password) {
-  //     medunnaPage.username.sendKeys(ConfigReader.getProperty(username));
-  //     medunnaPage.password.sendKeys(ConfigReader.getProperty(password));
-  //     medunnaPage.kullaniciSigninButton.click();
-  // }
 
     @Then("Doktor My Pages menusunden My Appointments butonunu tiklar")
     public void doktor_my_pages_menusunden_my_appointments_butonunu_tiklar() {
@@ -131,6 +110,9 @@ public class US011 {
     @Then("Doktor Status'a {string} secebildigini test eder")
     public void doktorStatusASecebildiginiTestEder(String istenenDurum) {
         waitFor(3);
+        if (medunnaPage.anamnesisTextBox.getText().isEmpty()) medunnaPage.anamnesisTextBox.sendKeys("Anamnesis");
+        if (medunnaPage.treatmentTextBox.getText().isEmpty()) medunnaPage.treatmentTextBox.sendKeys("Treatment");
+        if (medunnaPage.diagnosisTextBox.getText().isEmpty()) medunnaPage.diagnosisTextBox.sendKeys("Diagnosis", Keys.TAB);
         System.out.println("istenenDurum = " + istenenDurum);
         WebElement ddmStatus = medunnaPage.statusTextBox;
         Select options = new Select(ddmStatus);

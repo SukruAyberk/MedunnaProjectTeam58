@@ -15,7 +15,7 @@ public class CigdemAPage {
     @FindBy(xpath = "(//a[@class='dropdown-item'])[3]")
     public WebElement myInpatient;
 
-    @FindBy(xpath = "//a[@class='btn btn-primary btn-sm']")
+    @FindBy(xpath = "//span[text()='Edit']")
     public WebElement appointmentEditButonu;
 
     @FindBy(xpath = "//a[@class='btn btn-danger btn-sm']")
@@ -89,4 +89,19 @@ public class CigdemAPage {
 
     @FindBy(xpath = "//select[@id='in-patient-room']")
     public WebElement roomSekmesi;
+
+    @FindBy(xpath = "//li[@class='dropdown show nav-item']")
+    public WebElement myPagesDogrulama;
+
+    @FindBy(xpath = "//h2[@id='appointment-heading']")
+    public WebElement appointmentYazisi;
+
+    @FindBy(xpath = "//span[text()='Tests']")
+    public WebElement testsYazisi;
+
+    @FindBy(xpath = "//span[text()='Test Results']")
+    public WebElement testResultYazisi;
+
+    @FindBy(xpath = "//tbody//tr")
+    public WebElement hastaBilgileri;
 }

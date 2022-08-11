@@ -12,6 +12,7 @@ import org.testng.asserts.SoftAssert;
 import pages.RecepCPage;
 import utilities.Driver;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.openqa.selenium.By.xpath;
@@ -61,27 +62,20 @@ public class US012 {
     @And("Doktor Test Items Sayfasinda Glucose , Urea, Creatinine, Sodium, Potassium, Total protein, Albumin, Hemoglobin oldugunu dogrular")
     public void doktorTestItemsSayfasindaGlucoseUreaCreatinineSodiumPotassiumTotalProteinAlbuminHemoglobinOldugunuDogrular() {
         waitFor(5);
-        String actual1 = "", actual2 = "", actual3 = "", actual4 = "", actual5 = "", actual6 = "", actual7 = "", actual8 = "";
-        SoftAssert softAssert = new SoftAssert();
-        List<WebElement> testNames = medunnaPage.testName;
-        for (WebElement each : testNames) {
-                if (each.getText().equals("Glucose")) actual1 = "Glucose";
-                if (each.getText().equals("Urea")) actual2 = "Urea";
-                if (each.getText().equals("Creatinine")) actual3 = "Creatinine";
-                if (each.getText().equals("Sodium")) actual4 = "Sodium";
-                if (each.getText().equals("Potassium")) actual5 = "Potassium";
-                if (each.getText().equals("Total protein")) actual6 = "Total protein";
-                if (each.getText().equals("Albumin")) actual7 = "Albumin";
-                if (each.getText().equals("Hemoglobin")) actual8 = "Hemoglobin";
+        List<String> expectedTestList=new ArrayList<>();
+        expectedTestList.add("glucose");
+        expectedTestList.add("Urea");
+        expectedTestList.add("Creatinine");
+        expectedTestList.add("Sodium");
+        expectedTestList.add("Potassium");
+        expectedTestList.add("Total protein");
+        expectedTestList.add("Albumin");
+        expectedTestList.add("Hemoglobin");
+
+        List<String> actualTestList=new ArrayList<>();
+        for (WebElement each:medunnaPage.testName){
+            actualTestList.add(each.getText());
         }
-        softAssert.assertTrue(actual1.equals("Glucose"), "Glucose testi bulunamamıştır");
-        softAssert.assertTrue(actual2.equals("Urea"), "Urea testi bulunamamıştır");
-        softAssert.assertTrue(actual3.equals("Creatinine"), "Creatinine testi bulunamamıştır");
-        softAssert.assertTrue(actual4.equals("Sodium"), "Sodium testi bulunamamıştır");
-        softAssert.assertTrue(actual5.equals("Potassium"), "Potassium testi bulunamamıştır");
-        softAssert.assertTrue(actual6.equals("Total protein"), "Total protein testi bulunamamıştır");
-        softAssert.assertTrue(actual7.equals("Albumin"), "Albumin testi bulunamamıştır");
-        softAssert.assertTrue(actual8.equals("Hemoglobin"), "Hemoglobin testi bulunamamıştır");
-        softAssert.assertAll();
+        Assert.assertTrue(actualTestList.containsAll(expectedTestList));
     }
 }
