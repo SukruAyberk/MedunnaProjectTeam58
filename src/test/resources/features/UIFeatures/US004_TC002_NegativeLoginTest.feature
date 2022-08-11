@@ -2,12 +2,12 @@ Feature: US004 Giris Sayfasi Erisimi
 
   @us004tc002
   Scenario Outline:
-    Given kullanici "medunnaUrl" anasayfasinda
-    Then kullanici user sembolune basar
-    And kullanici sing in butonuna basar
+    Given user "medunnaUrl" anasayfasinda
+    Then user user sembolune tiklar
+    And user singIn butonuna tiklar
     And gecersiz username "<username>" girer
     And gecersiz password "<password>" girer
-    And singin butonuna basar
+    And user sing in butonuna tiklar
     And sayfaya giris yapilamadigini test eder
     Examples:
       | username            | password            |
