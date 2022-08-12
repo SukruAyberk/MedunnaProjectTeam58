@@ -24,13 +24,13 @@ public class OrtakClass {
     public void admin_profil_sembolune_tiklar() throws InterruptedException {
         ortakLocatePages.profilSimgesi.click();
         Thread.sleep(2000);
-        Assert.assertTrue(ortakLocatePages.userDropdownDogrulama.isDisplayed());
+        ortakLocatePages.userDropdownDogrulama.isDisplayed();
     }
 
     @Then("admin singIn sekmesi tiklar")
     public void admin_sing_in_sekmesi_tiklar() {
         ortakLocatePages.signInButton1.click();
-        Assert.assertTrue(ortakLocatePages.signInYazisi.isDisplayed());
+        ortakLocatePages.signInYazisi.isDisplayed();
     }
 
     @Then("admin gecerli {string} ve {string} ile giris yapar")
@@ -43,7 +43,7 @@ public class OrtakClass {
     public void admin_sing_in_butonuna_tiklar() throws InterruptedException {
         ortakLocatePages.signInButonu2.submit();
         Thread.sleep(2000);
-        Assert.assertTrue(ortakLocatePages.adminGirisDogrulama.isDisplayed());
+        ortakLocatePages.adminGirisDogrulama.isDisplayed();
     }
 
     //staff girisi
@@ -60,13 +60,13 @@ public class OrtakClass {
     public void staff_profil_sembolune_tiklar() throws InterruptedException {
         ortakLocatePages.profilSimgesi.click();
         Thread.sleep(2000);
-        Assert.assertTrue(ortakLocatePages.userDropdownDogrulama.isDisplayed());
+        ortakLocatePages.userDropdownDogrulama.isDisplayed();
     }
 
     @Then("staff singIn sekmesi tiklar")
     public void staff_sing_in_sekmesi_tiklar() {
         ortakLocatePages.signInButton1.click();
-        Assert.assertTrue(ortakLocatePages.signInYazisi.isDisplayed());
+        ortakLocatePages.signInYazisi.isDisplayed();
     }
 
     @Then("staff gecerli {string} ve {string} ile giris yapar")
@@ -79,7 +79,7 @@ public class OrtakClass {
     public void staff_sing_in_butonuna_tiklar() throws InterruptedException {
         ortakLocatePages.signInButonu2.submit();
         Thread.sleep(2000);
-        Assert.assertTrue(ortakLocatePages.staffGirisiDogrulama.isDisplayed());
+        ortakLocatePages.staffGirisiDogrulama.isDisplayed();
     }
 
     //doktor girisi
@@ -96,13 +96,13 @@ public class OrtakClass {
     public void doktor_profil_sembolune_tiklar() throws InterruptedException {
         ortakLocatePages.profilSimgesi.click();
         Thread.sleep(2000);
-        Assert.assertTrue(ortakLocatePages.userDropdownDogrulama.isDisplayed());
+        ortakLocatePages.userDropdownDogrulama.isDisplayed();
     }
 
     @Then("doktor singIn sekmesi tiklar")
     public void doktor_sing_in_sekmesi_tiklar() {
         ortakLocatePages.signInButton1.click();
-        Assert.assertTrue(ortakLocatePages.signInYazisi.isDisplayed());
+        ortakLocatePages.signInYazisi.isDisplayed();
     }
 
     @Then("doktor gecerli {string} ve {string} ile giris yapar")
@@ -115,7 +115,7 @@ public class OrtakClass {
     public void doktor_sing_in_butonuna_tiklar() throws InterruptedException {
         ortakLocatePages.signInButonu2.submit();
         Thread.sleep(2000);
-        Assert.assertTrue(ortakLocatePages.doktorGirisiDogrulama.isDisplayed());
+        ortakLocatePages.doktorGirisiDogrulama.isDisplayed();
     }
 
     //hasta  girisi
@@ -132,13 +132,13 @@ public class OrtakClass {
     public void patient_profil_sembolune_tiklar() throws InterruptedException {
         ortakLocatePages.profilSimgesi.click();
         Thread.sleep(2000);
-        Assert.assertTrue(ortakLocatePages.userDropdownDogrulama.isDisplayed());
+        ortakLocatePages.userDropdownDogrulama.isDisplayed();
     }
 
     @Then("patient singIn sekmesi tiklar")
     public void patient_sing_in_sekmesi_tiklar() {
         ortakLocatePages.signInButton1.click();
-        Assert.assertTrue(ortakLocatePages.signInYazisi.isDisplayed());
+        ortakLocatePages.signInYazisi.isDisplayed();
     }
 
     @Then("patient gecerli {string} ve {string} ile giris yapar")
@@ -151,7 +151,7 @@ public class OrtakClass {
     public void patient_sing_in_butonuna_tiklar() throws InterruptedException {
         ortakLocatePages.signInButonu2.submit();
         Thread.sleep(2000);
-        Assert.assertTrue(ortakLocatePages.hastaGirisiDogrulama.isDisplayed());
+        ortakLocatePages.hastaGirisiDogrulama.isDisplayed();
     }
 
     //user girisi
@@ -168,13 +168,13 @@ public class OrtakClass {
     public void user_user_sembolune_tiklar() throws InterruptedException {
         ortakLocatePages.profilSimgesi.click();
         Thread.sleep(2000);
-        Assert.assertTrue(ortakLocatePages.userDropdownDogrulama.isDisplayed());
+        ortakLocatePages.userDropdownDogrulama.isDisplayed();
     }
 
     @Then("user singIn sekmesi tiklar")
     public void user_sing_in_sekmesi_tiklar() {
         ortakLocatePages.signInButton1.click();
-        Assert.assertTrue(ortakLocatePages.signInYazisi.isDisplayed());
+        ortakLocatePages.signInYazisi.isDisplayed();
     }
 
     @Then("user gecerli {string} ve {string} ile giris yapar")
@@ -187,7 +187,7 @@ public class OrtakClass {
     public void user_sing_in_butonuna_tiklar() throws InterruptedException {
         ortakLocatePages.signInButonu2.submit();
         Thread.sleep(2000);
-        Assert.assertTrue(ortakLocatePages.userGirisiDogrulama.isDisplayed());
+        ortakLocatePages.userGirisiDogrulama.isDisplayed();
     }
 
 
