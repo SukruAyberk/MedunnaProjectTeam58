@@ -79,4 +79,3 @@ public class US013 {
         cigdemAPage.testsYazisi.isDisplayed();
     }
 }
-
