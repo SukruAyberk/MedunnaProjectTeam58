@@ -5,10 +5,10 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.testng.asserts.SoftAssert;
 import pages.RecepCPage;
 import utilities.Driver;
 
@@ -34,19 +34,24 @@ public class US012 {
     public void
     doktor_tik_atar(String istenenTest) {
         waitFor(3);
-        List<WebElement> testNames = medunnaPage.testName;
+        JavascriptExecutor js=(JavascriptExecutor) Driver.getDriver();
+
+        List<WebElement> testNames = medunnaPage.testNames;
         int count = 1;
         String testId = "";
+        WebElement istenenWebElement = null;
 
         for (WebElement each : testNames) {
             if (each.getText().equals(istenenTest)) {
                 System.out.println("count" + count);
+                istenenWebElement=Driver.getDriver().findElement(By.xpath("//tr["+ (count)+"]/td[2]"));
                 testId = Driver.getDriver().findElement(By.xpath("//tr[" + count + "]/td[1]")).getText();
                 break;
             }
             count++;
         }
         System.out.println("testId = " + testId);
+        js.executeScript("arguments[0].click();",istenenWebElement);
         Driver.getDriver().findElement(By.id(testId)).click();
 
     }
@@ -63,7 +68,7 @@ public class US012 {
     public void doktorTestItemsSayfasindaGlucoseUreaCreatinineSodiumPotassiumTotalProteinAlbuminHemoglobinOldugunuDogrular() {
         waitFor(5);
         List<String> expectedTestList=new ArrayList<>();
-        expectedTestList.add("glucose");
+        expectedTestList.add("Glucose");
         expectedTestList.add("Urea");
         expectedTestList.add("Creatinine");
         expectedTestList.add("Sodium");
@@ -73,7 +78,7 @@ public class US012 {
         expectedTestList.add("Hemoglobin");
 
         List<String> actualTestList=new ArrayList<>();
-        for (WebElement each:medunnaPage.testName){
+        for (WebElement each:medunnaPage.testNames){
             actualTestList.add(each.getText());
         }
         Assert.assertTrue(actualTestList.containsAll(expectedTestList));
