@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="3" time="42.189">
+    <testcase classname="US004 Giris Sayfasi Erisimi" name="_2" time="31.752">
+        <system-out>
+            <![CDATA[Given user "medunnaUrl" anasayfasinda.......................................passed
+Then user user sembolune tiklar.............................................passed
+And user singIn sekmesi tiklar..............................................passed
+And gecersiz username "newUsername" girer...................................passed
+And gecersiz password "UserInvalidPassword" girer...........................passed
+And singin butonuna basar...................................................passed
+And sayfaya giris yapilamadigini test eder..................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="US004 Giris Sayfasi Erisimi" name="_3" time="5.138">
+        <system-out>
+            <![CDATA[Given user "medunnaUrl" anasayfasinda.......................................passed
+Then user user sembolune tiklar.............................................passed
+And user singIn sekmesi tiklar..............................................passed
+And gecersiz username "UserInvalidUsername" girer...........................passed
+And gecersiz password "newUserPassword" girer...............................passed
+And singin butonuna basar...................................................passed
+And sayfaya giris yapilamadigini test eder..................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="US004 Giris Sayfasi Erisimi" name="_4" time="5.114">
+        <system-out>
+            <![CDATA[Given user "medunnaUrl" anasayfasinda.......................................passed
+Then user user sembolune tiklar.............................................passed
+And user singIn sekmesi tiklar..............................................passed
+And gecersiz username "UserInvalidUsername" girer...........................passed
+And gecersiz password "UserInvalidPassword" girer...........................passed
+And singin butonuna basar...................................................passed
+And sayfaya giris yapilamadigini test eder..................................passed
+]]>
+        </system-out>
+    </testcase>
+</testsuite>

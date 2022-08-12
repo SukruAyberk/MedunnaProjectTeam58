@@ -23,7 +23,7 @@ public class AyberkPage {
     @FindBy(xpath = "(//*[text()='Sign in'])[3]")
     public WebElement sing_in_button2;
 
-    @FindBy(xpath = "//*[text()='userTeam58 userTeam58']")
+    @FindBy(xpath = "//*[text()='user Team58']")
     public WebElement userTeam58_symbol;
 
     @FindBy(xpath = "//*[text()='Sign out']")
