@@ -7,7 +7,7 @@ Feature: US004 Giris Sayfasi Erisimi
     And user singIn sekmesi tiklar
     And gecersiz username "<username>" girer
     And gecersiz password "<password>" girer
-    And user sing in butonuna tiklar
+    And singin butonuna basar
     And sayfaya giris yapilamadigini test eder
     Examples:
       | username            | password            |
