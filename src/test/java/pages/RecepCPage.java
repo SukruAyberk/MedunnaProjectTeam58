@@ -76,8 +76,11 @@ public class RecepCPage {
     public WebElement createOrEditPageYazi;
 
     @FindBy(xpath = "//tr/td[2]")
-    public List<WebElement> testName;
+    public List<WebElement> testNames;
 
     @FindBy(xpath = "//a[@class='btn btn-success btn-sm']")
     public WebElement requestATest;
+
+    @FindBy (xpath = "//div[@class='invalid-feedback']")
+    public WebElement thisfiledMessage;
 }
