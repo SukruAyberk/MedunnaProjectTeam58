@@ -1,38 +1,50 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="3" time="42.189">
-    <testcase classname="US004 Giris Sayfasi Erisimi" name="_2" time="31.752">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="4" time="54.372">
+    <testcase classname="US003 Password Strength" name="TC001 Password uzunlugu 7den kucukse Password Strength seviyesinin degistigi gorulmeli" time="14.363">
         <system-out>
             <![CDATA[Given user "medunnaUrl" anasayfasinda.......................................passed
 Then user user sembolune tiklar.............................................passed
-And user singIn sekmesi tiklar..............................................passed
-And gecersiz username "newUsername" girer...................................passed
-And gecersiz password "UserInvalidPassword" girer...........................passed
-And singin butonuna basar...................................................passed
-And sayfaya giris yapilamadigini test eder..................................passed
+And kullanici register butonuna basar.......................................passed
+And kucuk harf "a" eklenince password strength kontrol eder.................passed
+And buyuk harf "A" eklenince password strength kontrol eder.................passed
+And "5" eklenince password strength kontrol eder............................passed
+And ozel karakter "*" password strength kontrol eder........................passed
 ]]>
         </system-out>
     </testcase>
-    <testcase classname="US004 Giris Sayfasi Erisimi" name="_3" time="5.138">
+    <testcase classname="US003 Password Strength" name="TC001 Password uzunlugu 7den kucukse Password Strength seviyesinin degistigi gorulmeli 2" time="13.314">
         <system-out>
             <![CDATA[Given user "medunnaUrl" anasayfasinda.......................................passed
 Then user user sembolune tiklar.............................................passed
-And user singIn sekmesi tiklar..............................................passed
-And gecersiz username "UserInvalidUsername" girer...........................passed
-And gecersiz password "newUserPassword" girer...............................passed
-And singin butonuna basar...................................................passed
-And sayfaya giris yapilamadigini test eder..................................passed
+And kullanici register butonuna basar.......................................passed
+And kucuk harf "aa" eklenince password strength kontrol eder................passed
+And buyuk harf "AA" eklenince password strength kontrol eder................passed
+And "55" eklenince password strength kontrol eder...........................passed
+And ozel karakter "*" password strength kontrol eder........................passed
 ]]>
         </system-out>
     </testcase>
-    <testcase classname="US004 Giris Sayfasi Erisimi" name="_4" time="5.114">
+    <testcase classname="US003 Password Strength" name="TC001 Password uzunlugu 7den kucukse Password Strength seviyesinin degistigi gorulmeli 3" time="13.577">
         <system-out>
             <![CDATA[Given user "medunnaUrl" anasayfasinda.......................................passed
 Then user user sembolune tiklar.............................................passed
-And user singIn sekmesi tiklar..............................................passed
-And gecersiz username "UserInvalidUsername" girer...........................passed
-And gecersiz password "UserInvalidPassword" girer...........................passed
-And singin butonuna basar...................................................passed
-And sayfaya giris yapilamadigini test eder..................................passed
+And kullanici register butonuna basar.......................................passed
+And kucuk harf "aaa" eklenince password strength kontrol eder...............passed
+And buyuk harf "AAA" eklenince password strength kontrol eder...............passed
+And "5" eklenince password strength kontrol eder............................passed
+And ozel karakter "*" password strength kontrol eder........................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="US003 Password Strength" name="TC001 Password uzunlugu 7den kucukse Password Strength seviyesinin degistigi gorulmeli 4" time="12.907">
+        <system-out>
+            <![CDATA[Given user "medunnaUrl" anasayfasinda.......................................passed
+Then user user sembolune tiklar.............................................passed
+And kullanici register butonuna basar.......................................passed
+And kucuk harf "aaaa" eklenince password strength kontrol eder..............passed
+And buyuk harf "AAAA" eklenince password strength kontrol eder..............passed
+And "5" eklenince password strength kontrol eder............................passed
+And ozel karakter "*" password strength kontrol eder........................passed
 ]]>
         </system-out>
     </testcase>
