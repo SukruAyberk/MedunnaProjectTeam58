@@ -5,7 +5,6 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
-import org.testng.asserts.SoftAssert;
 import pages.AyberkPage;
 import utilities.ConfigReader;
 import utilities.Driver;
@@ -54,13 +53,11 @@ public class US003 {
         String expectedStrengthBar4 = "background-color: rgb(221, 221, 221);";
         String expectedStrengthBar5 = "background-color: rgb(221, 221, 221);";
 
-        SoftAssert softAssert = new SoftAssert();
-        softAssert.assertEquals(actualStrengthBar1, expectedStrengthBar1);
-        softAssert.assertEquals(actualStrengthBar2, expectedStrengthBar2);
-        softAssert.assertEquals(actualStrengthBar3, expectedStrengthBar3);
-        softAssert.assertEquals(actualStrengthBar4, expectedStrengthBar4);
-        softAssert.assertEquals(actualStrengthBar5, expectedStrengthBar5);
-        softAssert.assertAll();
+        Assert.assertEquals(expectedStrengthBar1, actualStrengthBar1);
+        Assert.assertEquals(expectedStrengthBar2, actualStrengthBar2);
+        Assert.assertEquals(expectedStrengthBar3, actualStrengthBar3);
+        Assert.assertEquals(expectedStrengthBar4, actualStrengthBar4);
+        Assert.assertEquals(expectedStrengthBar5, actualStrengthBar5);
 
         Thread.sleep(1000);
         System.out.println("kucuk eklenmiş: " + password);
@@ -103,8 +100,6 @@ public class US003 {
         String actualStrengthBar4 = ayberk.strength_bar4.getAttribute("style");
         String actualStrengthBar5 = ayberk.strength_bar5.getAttribute("style");
 
-        SoftAssert softAssert = new SoftAssert();
-
         if (password.length() < 7) {
             String expectedStrengthBar1 = "background-color: rgb(255, 0, 0);";
             String expectedStrengthBar2 = "background-color: rgb(221, 221, 221);";
@@ -112,12 +107,12 @@ public class US003 {
             String expectedStrengthBar4 = "background-color: rgb(221, 221, 221);";
             String expectedStrengthBar5 = "background-color: rgb(221, 221, 221);";
 
-            softAssert.assertEquals(actualStrengthBar1, expectedStrengthBar1);
-            softAssert.assertEquals(actualStrengthBar2, expectedStrengthBar2);
-            softAssert.assertEquals(actualStrengthBar3, expectedStrengthBar3);
-            softAssert.assertEquals(actualStrengthBar4, expectedStrengthBar4);
-            softAssert.assertEquals(actualStrengthBar5, expectedStrengthBar5);
-            softAssert.assertTrue(password.length() < 7);
+            Assert.assertEquals(expectedStrengthBar1, actualStrengthBar1);
+            Assert.assertEquals(expectedStrengthBar2, actualStrengthBar2);
+            Assert.assertEquals(expectedStrengthBar3, actualStrengthBar3);
+            Assert.assertEquals(expectedStrengthBar4, actualStrengthBar4);
+            Assert.assertEquals(expectedStrengthBar5, actualStrengthBar5);
+            Assert.assertTrue(password.length() < 7);
         } else if (password.length() >= 7) {
             String expectedStrengthBar1 = "background-color: rgb(255, 153, 0);";
             String expectedStrengthBar2 = "background-color: rgb(255, 153, 0);";
@@ -125,14 +120,13 @@ public class US003 {
             String expectedStrengthBar4 = "background-color: rgb(221, 221, 221);";
             String expectedStrengthBar5 = "background-color: rgb(221, 221, 221);";
 
-            softAssert.assertEquals(actualStrengthBar1, expectedStrengthBar1);
-            softAssert.assertEquals(actualStrengthBar2, expectedStrengthBar2);
-            softAssert.assertEquals(actualStrengthBar3, expectedStrengthBar3);
-            softAssert.assertEquals(actualStrengthBar4, expectedStrengthBar4);
-            softAssert.assertEquals(actualStrengthBar5, expectedStrengthBar5);
-            softAssert.assertTrue(password.length() >= 7);
+            Assert.assertEquals(expectedStrengthBar1, actualStrengthBar1);
+            Assert.assertEquals(expectedStrengthBar2, actualStrengthBar2);
+            Assert.assertEquals(expectedStrengthBar3, actualStrengthBar3);
+            Assert.assertEquals(expectedStrengthBar4, actualStrengthBar4);
+            Assert.assertEquals(expectedStrengthBar5, actualStrengthBar5);
+            Assert.assertTrue(password.length() < 7);
         }
-        softAssert.assertAll();
 
         Thread.sleep(1000);
         System.out.println("buyuk eklenmiş: " + password);
@@ -144,8 +138,6 @@ public class US003 {
         sayi = sayii;
         password += sayi;
         ayberk.new_password_textbox.sendKeys(sayi);
-
-        SoftAssert softAssert = new SoftAssert();
 
         String actualStrengthBar1 = ayberk.strength_bar1.getAttribute("style");
         String actualStrengthBar2 = ayberk.strength_bar2.getAttribute("style");
@@ -160,12 +152,12 @@ public class US003 {
             String expectedStrengthBar4 = "background-color: rgb(221, 221, 221);";
             String expectedStrengthBar5 = "background-color: rgb(221, 221, 221);";
 
-            softAssert.assertEquals(actualStrengthBar1, expectedStrengthBar1);
-            softAssert.assertEquals(actualStrengthBar2, expectedStrengthBar2);
-            softAssert.assertEquals(actualStrengthBar3, expectedStrengthBar3);
-            softAssert.assertEquals(actualStrengthBar4, expectedStrengthBar4);
-            softAssert.assertEquals(actualStrengthBar5, expectedStrengthBar5);
-            softAssert.assertTrue(password.length() < 7);
+            Assert.assertEquals(expectedStrengthBar1, actualStrengthBar1);
+            Assert.assertEquals(expectedStrengthBar2, actualStrengthBar2);
+            Assert.assertEquals(expectedStrengthBar3, actualStrengthBar3);
+            Assert.assertEquals(expectedStrengthBar4, actualStrengthBar4);
+            Assert.assertEquals(expectedStrengthBar5, actualStrengthBar5);
+            Assert.assertTrue(password.length() < 7);
         } else if (password.length() >= 7) {
             String expectedStrengthBar1 = "background-color: rgb(153, 255, 0);";
             String expectedStrengthBar2 = "background-color: rgb(153, 255, 0);";
@@ -173,14 +165,13 @@ public class US003 {
             String expectedStrengthBar4 = "background-color: rgb(153, 255, 0);";
             String expectedStrengthBar5 = "background-color: rgb(221, 221, 221);";
 
-            softAssert.assertEquals(actualStrengthBar1, expectedStrengthBar1);
-            softAssert.assertEquals(actualStrengthBar2, expectedStrengthBar2);
-            softAssert.assertEquals(actualStrengthBar3, expectedStrengthBar3);
-            softAssert.assertEquals(actualStrengthBar4, expectedStrengthBar4);
-            softAssert.assertEquals(actualStrengthBar5, expectedStrengthBar5);
-            softAssert.assertTrue(password.length() >= 7);
+            Assert.assertEquals(expectedStrengthBar1, actualStrengthBar1);
+            Assert.assertEquals(expectedStrengthBar2, actualStrengthBar2);
+            Assert.assertEquals(expectedStrengthBar3, actualStrengthBar3);
+            Assert.assertEquals(expectedStrengthBar4, actualStrengthBar4);
+            Assert.assertEquals(expectedStrengthBar5, actualStrengthBar5);
+            Assert.assertTrue(password.length() >= 7);
         }
-        softAssert.assertAll();
 
         Thread.sleep(1000);
         System.out.println("sayi eklenmiş: " + password);
@@ -194,8 +185,6 @@ public class US003 {
         password += ozelKarakter;
         ayberk.new_password_textbox.sendKeys(ozel);
 
-        SoftAssert softAssert = new SoftAssert();
-
         String actualStrengthBar1 = ayberk.strength_bar1.getAttribute("style");
         String actualStrengthBar2 = ayberk.strength_bar2.getAttribute("style");
         String actualStrengthBar3 = ayberk.strength_bar3.getAttribute("style");
@@ -209,12 +198,12 @@ public class US003 {
             String expectedStrengthBar4 = "background-color: rgb(221, 221, 221);";
             String expectedStrengthBar5 = "background-color: rgb(221, 221, 221);";
 
-            softAssert.assertEquals(actualStrengthBar1, expectedStrengthBar1);
-            softAssert.assertEquals(actualStrengthBar2, expectedStrengthBar2);
-            softAssert.assertEquals(actualStrengthBar3, expectedStrengthBar3);
-            softAssert.assertEquals(actualStrengthBar4, expectedStrengthBar4);
-            softAssert.assertEquals(actualStrengthBar5, expectedStrengthBar5);
-            softAssert.assertTrue(password.length() < 7);
+            Assert.assertEquals(expectedStrengthBar1, actualStrengthBar1);
+            Assert.assertEquals(expectedStrengthBar2, actualStrengthBar2);
+            Assert.assertEquals(expectedStrengthBar3, actualStrengthBar3);
+            Assert.assertEquals(expectedStrengthBar4, actualStrengthBar4);
+            Assert.assertEquals(expectedStrengthBar5, actualStrengthBar5);
+            Assert.assertTrue(password.length() < 7);
         } else if (password.length() >= 7) {
             String expectedStrengthBar1 = "background-color: rgb(0, 255, 0);";
             String expectedStrengthBar2 = "background-color: rgb(0, 255, 0);";
@@ -222,14 +211,13 @@ public class US003 {
             String expectedStrengthBar4 = "background-color: rgb(0, 255, 0);";
             String expectedStrengthBar5 = "background-color: rgb(0, 255, 0);";
 
-            softAssert.assertEquals(actualStrengthBar1, expectedStrengthBar1);
-            softAssert.assertEquals(actualStrengthBar2, expectedStrengthBar2);
-            softAssert.assertEquals(actualStrengthBar3, expectedStrengthBar3);
-            softAssert.assertEquals(actualStrengthBar4, expectedStrengthBar4);
-            softAssert.assertEquals(actualStrengthBar5, expectedStrengthBar5);
-            softAssert.assertTrue(password.length() >= 7);
+            Assert.assertEquals(expectedStrengthBar1, actualStrengthBar1);
+            Assert.assertEquals(expectedStrengthBar2, actualStrengthBar2);
+            Assert.assertEquals(expectedStrengthBar3, actualStrengthBar3);
+            Assert.assertEquals(expectedStrengthBar4, actualStrengthBar4);
+            Assert.assertEquals(expectedStrengthBar5, actualStrengthBar5);
+            Assert.assertTrue(password.length() >= 7);
         }
-        softAssert.assertAll();
 
         Thread.sleep(1000);
         System.out.println("ozel eklenmiş: " + password);

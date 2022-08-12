@@ -1,66 +1,39 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="3" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="3" time="19.011">
-    <testcase classname="US004 Giris Sayfasi Erisimi" name="_2" time="9.987">
-        <failure message="expected [true] but found [false]" type="java.lang.AssertionError">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="3" time="42.189">
+    <testcase classname="US004 Giris Sayfasi Erisimi" name="_2" time="31.752">
+        <system-out>
             <![CDATA[Given user "medunnaUrl" anasayfasinda.......................................passed
 Then user user sembolune tiklar.............................................passed
-And user singIn sekmesi tiklar..............................................failed
-And gecersiz username "newUsername" girer...................................skipped
-And gecersiz password "UserInvalidPassword" girer...........................skipped
-And singin butonuna basar...................................................skipped
-And sayfaya giris yapilamadigini test eder..................................skipped
-
-StackTrace:
-java.lang.AssertionError: expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:110)
-	at org.testng.Assert.failNotEquals(Assert.java:1413)
-	at org.testng.Assert.assertTrue(Assert.java:56)
-	at org.testng.Assert.assertTrue(Assert.java:66)
-	at stepDefinitions.uiSteps.OrtakClass.user_sing_in_sekmesi_tiklar(OrtakClass.java:177)
-	at ✽.user singIn sekmesi tiklar(file:///C:/Users/ayber/IdeaProjects/MedunnaProject/./src/test/resources/features/UIFeatures/US004_TC002_NegativeLoginTest.feature:7)
+And user singIn sekmesi tiklar..............................................passed
+And gecersiz username "newUsername" girer...................................passed
+And gecersiz password "UserInvalidPassword" girer...........................passed
+And singin butonuna basar...................................................passed
+And sayfaya giris yapilamadigini test eder..................................passed
 ]]>
-        </failure>
+        </system-out>
     </testcase>
-    <testcase classname="US004 Giris Sayfasi Erisimi" name="_3" time="4.439">
-        <failure message="expected [true] but found [false]" type="java.lang.AssertionError">
+    <testcase classname="US004 Giris Sayfasi Erisimi" name="_3" time="5.138">
+        <system-out>
             <![CDATA[Given user "medunnaUrl" anasayfasinda.......................................passed
 Then user user sembolune tiklar.............................................passed
-And user singIn sekmesi tiklar..............................................failed
-And gecersiz username "UserInvalidUsername" girer...........................skipped
-And gecersiz password "newUserPassword" girer...............................skipped
-And singin butonuna basar...................................................skipped
-And sayfaya giris yapilamadigini test eder..................................skipped
-
-StackTrace:
-java.lang.AssertionError: expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:110)
-	at org.testng.Assert.failNotEquals(Assert.java:1413)
-	at org.testng.Assert.assertTrue(Assert.java:56)
-	at org.testng.Assert.assertTrue(Assert.java:66)
-	at stepDefinitions.uiSteps.OrtakClass.user_sing_in_sekmesi_tiklar(OrtakClass.java:177)
-	at ✽.user singIn sekmesi tiklar(file:///C:/Users/ayber/IdeaProjects/MedunnaProject/./src/test/resources/features/UIFeatures/US004_TC002_NegativeLoginTest.feature:7)
+And user singIn sekmesi tiklar..............................................passed
+And gecersiz username "UserInvalidUsername" girer...........................passed
+And gecersiz password "newUserPassword" girer...............................passed
+And singin butonuna basar...................................................passed
+And sayfaya giris yapilamadigini test eder..................................passed
 ]]>
-        </failure>
+        </system-out>
     </testcase>
-    <testcase classname="US004 Giris Sayfasi Erisimi" name="_4" time="4.423">
-        <failure message="expected [true] but found [false]" type="java.lang.AssertionError">
+    <testcase classname="US004 Giris Sayfasi Erisimi" name="_4" time="5.114">
+        <system-out>
             <![CDATA[Given user "medunnaUrl" anasayfasinda.......................................passed
 Then user user sembolune tiklar.............................................passed
-And user singIn sekmesi tiklar..............................................failed
-And gecersiz username "UserInvalidUsername" girer...........................skipped
-And gecersiz password "UserInvalidPassword" girer...........................skipped
-And singin butonuna basar...................................................skipped
-And sayfaya giris yapilamadigini test eder..................................skipped
-
-StackTrace:
-java.lang.AssertionError: expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:110)
-	at org.testng.Assert.failNotEquals(Assert.java:1413)
-	at org.testng.Assert.assertTrue(Assert.java:56)
-	at org.testng.Assert.assertTrue(Assert.java:66)
-	at stepDefinitions.uiSteps.OrtakClass.user_sing_in_sekmesi_tiklar(OrtakClass.java:177)
-	at ✽.user singIn sekmesi tiklar(file:///C:/Users/ayber/IdeaProjects/MedunnaProject/./src/test/resources/features/UIFeatures/US004_TC002_NegativeLoginTest.feature:7)
+And user singIn sekmesi tiklar..............................................passed
+And gecersiz username "UserInvalidUsername" girer...........................passed
+And gecersiz password "UserInvalidPassword" girer...........................passed
+And singin butonuna basar...................................................passed
+And sayfaya giris yapilamadigini test eder..................................passed
 ]]>
-        </failure>
+        </system-out>
     </testcase>
 </testsuite>

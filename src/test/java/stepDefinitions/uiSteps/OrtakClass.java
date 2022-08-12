@@ -2,7 +2,7 @@ package stepDefinitions.uiSteps;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import org.testng.Assert;
+import org.junit.Assert;
 import pages.OrtakLocatePages;
 import utilities.ConfigReader;
 import utilities.Driver;
@@ -17,7 +17,7 @@ public class OrtakClass {
         Thread.sleep(2000);
         String expectedUrl = "https://medunna.com/";
         String actuelUrl = Driver.getDriver().getCurrentUrl();
-        Assert.assertEquals(actuelUrl, expectedUrl);
+        Assert.assertEquals(expectedUrl, actuelUrl);
     }
 
     @Then("admin profil sembolune tiklar")
@@ -53,7 +53,7 @@ public class OrtakClass {
         Thread.sleep(2000);
         String expectedUrl = "https://medunna.com/";
         String actuelUrl = Driver.getDriver().getCurrentUrl();
-        Assert.assertEquals(actuelUrl, expectedUrl);
+        Assert.assertEquals(expectedUrl, actuelUrl);
     }
 
     @Then("staff profil sembolune tiklar")
@@ -89,7 +89,7 @@ public class OrtakClass {
         Thread.sleep(2000);
         String expectedUrl = "https://medunna.com/";
         String actuelUrl = Driver.getDriver().getCurrentUrl();
-        Assert.assertEquals(actuelUrl, expectedUrl);
+        Assert.assertEquals(expectedUrl, actuelUrl);
     }
 
     @Then("doktor profil sembolune tiklar")
@@ -125,7 +125,7 @@ public class OrtakClass {
         Thread.sleep(2000);
         String expectedUrl = "https://medunna.com/";
         String actuelUrl = Driver.getDriver().getCurrentUrl();
-        Assert.assertEquals(actuelUrl, expectedUrl);
+        Assert.assertEquals(expectedUrl, actuelUrl);
     }
 
     @Then("patient profil sembolune tiklar")
@@ -161,7 +161,7 @@ public class OrtakClass {
         Thread.sleep(2000);
         String expectedUrl = "https://medunna.com/";
         String actuelUrl = Driver.getDriver().getCurrentUrl();
-        Assert.assertEquals(actuelUrl, expectedUrl);
+        Assert.assertEquals(expectedUrl, actuelUrl);
     }
 
     @Then("user user sembolune tiklar")
