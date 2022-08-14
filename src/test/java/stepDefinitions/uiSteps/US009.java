@@ -2,6 +2,7 @@ package stepDefinitions.uiSteps;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+import org.junit.Assert;
 import pages.ErvaPage;
 import pages.OrtakLocatePages;
 
@@ -21,18 +22,33 @@ public class US009 {
         waitFor(5);
     }
 
-    @Then("staff Search Patient sekmesinde hasta bilgilerini gorur")
+    @Then("staff Search Patient sekmesinde hasta bilgilerini gorur")    //Buna bak
     public void staffSearchPatientSekmesindeHastaBilgileriniGorur() {
+        Assert.assertTrue(ervaPage.patientDatenList.size() > 0);
+    }
+
+    @And("staff hastanin yanindaki edit butonuna tiklar")
+    public void staffHastaninYanindakiEditButonunaTiklar() {
+        ervaPage.editButonu.click();
+    }
+
+    @And("staff hasta bilgilerinin duzenlenebilir oldugunu test eder")
+    public void staffHastaBilgilerininDuzenlenebilirOldugunuTestEder() {
+//?
+    }
+
+    @And("staff SSN kismina hasta SSN bilgisi girer")
+    public void staffSSNKisminaHastaSSNBilgisiGirer() {
+        ervaPage.ssnKismi.sendKeys("668834231");
+    }
+
+    @And("staff ilgili hastanin yanindaki view butonuna tiklar")
+    public void staffIlgiliHastaninYanindakiViewButonunaTiklar() {
         ervaPage.viewButonu.click();
-        waitFor(5);
     }
 
-    @And("staff hastanın yanındaki edit butonuna tıklar")
-    public void staffHastanınYanındakiEditButonunaTıklar() {
-        
-    }
-
-    @And("staff hasta bilgilerinin düzenlenebilir olduğunu test eder")
-    public void staffHastaBilgilerininDüzenlenebilirOlduğunuTestEder() {
+    @And("staff kayit bilgilerinin gorunur oldugunu test eder")
+    public void staffKayitBilgilerininGorunurOldugunuTestEder() {
+        ervaPage.kayitBilgileri.isDisplayed();
     }
 }
