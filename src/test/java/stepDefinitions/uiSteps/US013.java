@@ -1,12 +1,12 @@
-/*package stepDefinitions.uiSteps;
+package stepDefinitions.uiSteps;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
-import org.testng.Assert;
 import pages.CigdemAPage;
 import pages.OrtakLocatePages;
 import utilities.ConfigReader;
@@ -79,4 +79,3 @@ public class US013 {
         cigdemAPage.testsYazisi.isDisplayed();
     }
 }
-*/
