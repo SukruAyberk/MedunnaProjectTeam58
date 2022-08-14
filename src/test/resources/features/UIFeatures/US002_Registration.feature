@@ -3,19 +3,8 @@
 Feature:US002
 
 
-  Scenario:TC001
-    Given Kullanici Medunna ana sayfasina gider
-    And Kullanici Register butonuna tiklar
-    And Kullanici SSN kutusuna geçerli bir "SSN" numarasi girer
-    And Kullanici firstname kutusuna geçerli bir "firstname" girer
-    And Kullanici lastname kutusuna geçerli bir "lastname" girer
-    And Kullanici username kutusuna geçerli bir "username" girer
-    And Kullanici email kutusuna geçerli bir "email" girer
-    And Kullanici password kutusuna geçerli bir "password" girer
-    Then Kullanici register butonuna tıklar
-    Then Kullanici Registitaion Saved yazisinin gorunur oldugunu dogrular
 
-  Scenario:TC002
+  Scenario:TC001 kullanici bos username ile kayit olamamali
     Given Kullanici Medunna ana sayfasina gider
     And Kullanici Register butonuna tiklar
     And Kullanici SSN kutusuna geçerli bir "SSN" numarasi girer
@@ -27,19 +16,8 @@ Feature:US002
     Then Kullanici register butonuna tıklar
     Then Kullanici bos username hata mesajinin gorunur oldugunu dogrular
 
-  Scenario:TC003
-    Given Kullanici Medunna ana sayfasina gider
-    And Kullanici Register butonuna tiklar
-    And Kullanici SSN kutusuna geçerli bir "SSN" numarasi girer
-    And Kullanici firstname kutusuna geçerli bir "firstname" girer
-    And Kullanici lastname kutusuna geçerli bir "lastname" girer
-    And Kullanici username kutusuna geçerli bir "username" girer
-    And Kullanici email kutusuna geçerli bir "email" girer
-    And Kullanici password kutusuna geçerli bir "password" girer
-    Then Kullanici register butonuna tıklar
-    Then Kullanici Registitaion Saved yazisinin gorunur oldugunu dogrular
 
-  Scenario:TC004
+  Scenario:TC002 kullanici bos email ile kayit olamamali
     Given Kullanici Medunna ana sayfasina gider
     And Kullanici Register butonuna tiklar
     And Kullanici SSN kutusuna geçerli bir "SSN" numarasi girer
@@ -51,7 +29,7 @@ Feature:US002
     Then Kullanici register butonuna tıklar
     Then Kullanici bos email hata mesajinin gorunur oldugunu dogrular
 
-  Scenario:TC005
+  Scenario:TC003 kullanici gecersiz email ile kayıt olamamali
     Given Kullanici Medunna ana sayfasina gider
     And Kullanici Register butonuna tiklar
     And Kullanici SSN kutusuna geçerli bir "SSN" numarasi girer

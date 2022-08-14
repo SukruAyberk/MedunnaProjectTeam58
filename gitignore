@@ -1,0 +1,12 @@
+.src/test/java/Hooks/Hooks.java
+.src/test/java/runners/Runner.java
+.src/test/java/stepDefinitions/uiSteps/US013.java
+.target/test-classes/features/UIFeatures/US009_StaffHastaBilgileriyleIlgiliIslemleriYapabilmeli.feature
+.target/test-classes/hooks/Hooks.class
+.target/test-classes/pages/AyberkPage.class
+.target/test-classes/pages/ErvaPage.class
+.target/test-classes/runners/Runner.class
+.target/test-classes/stepDefinitions/uiSteps/OrtakClass.class
+.target/test-classes/stepDefinitions/uiSteps/US001.class
+.target/test-classes/stepDefinitions/uiSteps/US003.class
+.target/test-classes/stepDefinitions/uiSteps/US009.class
