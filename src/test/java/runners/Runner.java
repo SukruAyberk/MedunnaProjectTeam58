@@ -17,7 +17,7 @@ import org.junit.runner.RunWith;
 
         glue = {"stepDefinitions", "Hooks"},
 
-        tags = "@us12",
+        tags = "@APItests",
 
         dryRun = false
 

@@ -4,7 +4,7 @@ Feature: Registration Ozelligi
 
 
   @US001_UIRegistration
-  Scenario: TC001
+  Scenario: TC001 kullanici gecerli bilgiler ile kayit olabilmeli
     Given Kullanici Medunna ana sayfasina gider
     And Kullanici Register butonuna tiklar
     And Kullanici SSN kutusuna geçerli bir "SSN" numarasi girer
@@ -16,7 +16,7 @@ Feature: Registration Ozelligi
     Then Kullanici register butonuna tıklar
     Then Kullanici Registitaion Saved yazisinin gorunur oldugunu dogrular
 
-  Scenario: TC002
+  Scenario: TC002 kullanici gecersiz SSN ile kayit olamamali
       Given Kullanici Medunna ana sayfasina gider
       And Kullanici Register butonuna tiklar
       And Kullanici SSN kutusuna geçersiz bir "SSN" numarasi girer
@@ -28,7 +28,7 @@ Feature: Registration Ozelligi
       Then Kullanici register butonuna tıklar
       Then Kullanici SSN hata mesajinin gorunur oldugunu dogrular
 
-  Scenario: TC003
+  Scenario: TC003 kullanici bos SSN ile kayit olamamali
     Given Kullanici Medunna ana sayfasina gider
     And Kullanici Register butonuna tiklar
     And Kullanici SSN kutusunu bos birakir
@@ -40,7 +40,7 @@ Feature: Registration Ozelligi
     Then Kullanici register butonuna tıklar
     Then Kullanici bos SSN hata mesajinin gorunur oldugunu dogrular
 
-  Scenario: TC004
+  Scenario: TC004 kullanici bos firtsname ile kayit olamamali
     Given Kullanici Medunna ana sayfasina gider
     And Kullanici Register butonuna tiklar
     And Kullanici SSN kutusuna geçerli bir "SSN" numarasi girer
@@ -52,7 +52,7 @@ Feature: Registration Ozelligi
     Then Kullanici register butonuna tıklar
     Then Kullanici bos firstname hata mesajinin gorunur oldugunu dogrular
 
-  Scenario: TC005
+  Scenario: TC005 kullanici bos lastname ile kayit olamamali
     Given Kullanici Medunna ana sayfasina gider
     And Kullanici Register butonuna tiklar
     And Kullanici SSN kutusuna geçerli bir "SSN" numarasi girer
@@ -64,7 +64,7 @@ Feature: Registration Ozelligi
     Then Kullanici register butonuna tıklar
     Then Kullanici bos lastname hata mesajinin gorunur oldugunu dogrular
 
-  Scenario: TC006
+  Scenario: TC006 kullanici dokuz ile baslayan SSN ile kayit olabilmeli
     Given Kullanici Medunna ana sayfasina gider
     And Kullanici Register butonuna tiklar
     And Kullanici SSN kutusuna dokuz ile başlayan bir "SSN" numarasi girer
