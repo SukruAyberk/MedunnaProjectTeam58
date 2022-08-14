@@ -1,3 +1,4 @@
+.idea/dbnavigator.xml
 .src/test/java/Hooks/Hooks.java
 .src/test/java/runners/Runner.java
 .src/test/java/stepDefinitions/uiSteps/US013.java
