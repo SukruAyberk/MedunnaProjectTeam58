@@ -17,7 +17,7 @@ public class OrtakLocatePages {
     @FindBy(xpath = "//li[@class='dropdown show nav-item']")
     public WebElement userDropdownDogrulama;
 
-    @FindBy(xpath = "//a[@id='login-item']")
+    @FindBy(xpath = "//*[text()='Sign in']")
     public WebElement signInButton1;
 
     @FindBy(xpath = "//input[@name='username']")

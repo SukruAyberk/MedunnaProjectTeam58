@@ -18,7 +18,7 @@ public class CigdemAPage {
     @FindBy(xpath = "//span[text()='Edit']")
     public WebElement appointmentEditButonu;
 
-    @FindBy(xpath = "//a[@class='btn btn-danger btn-sm']")
+    @FindBy(xpath = "//*[text()='Show Test Results']")
     public WebElement showTestResultButonu;
 
     @FindBy(xpath = "//span[@class='d-none d-md-inline']")
@@ -81,7 +81,7 @@ public class CigdemAPage {
     @FindBy(xpath = "(//tr//th)[9]")
     public List<WebElement> patientList;
 
-    @FindBy(xpath = "//*[text()='Edit']")
+    @FindBy(xpath = "//div[@class='btn-group flex-btn-group-container']")
     public WebElement inpatientEditButton;
 
     @FindBy(xpath = "//select[@id='in-patient-status']")
@@ -102,7 +102,20 @@ public class CigdemAPage {
     @FindBy(xpath = "//span[text()='Test Results']")
     public WebElement testResultYazisi;
 
-    @FindBy(xpath = "//tbody//tr")
+    @FindBy(xpath = "//table[@class='table']" )
     public WebElement hastaBilgileri;
+
+
+    @FindBy(xpath = "//*[text()='In Patients']")
+    public WebElement inPatientYazisi;
+
+    @FindBy(xpath = "//*[text()='Create or edit a In Patient']")
+    public WebElement createOrEditInpatientYazisi;
+
+    @FindBy(xpath ="//*[contains (text(),'The In Patient is updated with identifier')]")
+    public WebElement roomGuncellemeYazisi;
+
+    @FindBy(xpath = "//select[@name='room.id']")
+    public WebElement hastaRoomİd;
 
 }

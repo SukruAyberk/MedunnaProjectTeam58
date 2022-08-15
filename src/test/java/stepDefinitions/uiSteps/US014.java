@@ -3,6 +3,7 @@ package stepDefinitions.uiSteps;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -20,14 +21,35 @@ import java.util.List;
 public class US014 {
 
     static CigdemAPage cigdemAPage = new CigdemAPage();
-   static OrtakLocatePages ortakLocatePages = new OrtakLocatePages();
+    static OrtakLocatePages ortakLocatePages = new OrtakLocatePages();
+    static Actions action = new Actions(Driver.getDriver());
 
+    @Then("doktor My Inpatients sekmesine tiklar")
+    public void doktor_my_inpatients_sekmesine_tiklar() {
+      ReusableMethods.waitForVisibility(cigdemAPage.myInpatientButonu,15);
+      cigdemAPage.myInpatientButonu.click();
+      Assert.assertTrue(cigdemAPage.inPatientYazisi.isDisplayed());
+    }
+    @Then("doktor hastalara ait bilgilerini goruntuler")
+    public void doktor_hastalara_ait_bilgilerini_goruntuler() {
+        WebElement hastaBilgiTablosu = Driver.waitForVisibility(cigdemAPage.hastaBilgileri, 10);
+        System.out.println(hastaBilgiTablosu.getText());
+        Assert.assertTrue(cigdemAPage.hastaBilgileri.isDisplayed());
 
-
-       /* cigdemAPage.inpatientEditButton.click();
-        Thread.sleep(2000);
+    }
+    @Then("doktor My Inpatients sayfasinda Edit e tiklar")
+    public void doktor_my_ınpatients_sayfasinda_edit_e_tiklar() {
         Actions action = new Actions(Driver.getDriver());
         action.sendKeys(Keys.PAGE_DOWN).perform();
+        ReusableMethods.waitForVisibility(cigdemAPage.inpatientEditButton, 15);
+        cigdemAPage.inpatientEditButton.click();
+        Assert.assertTrue(cigdemAPage.createOrEditInpatientYazisi.isDisplayed());
+    }
+    @Then("doktor status menusunu gunceller")
+    public void doktor_status_menusunu_gunceller() {
+
+        action.sendKeys(Keys.PAGE_DOWN).perform();
+        ReusableMethods.waitForVisibility(cigdemAPage.statusSekmesi,15);
         Select select=new Select(cigdemAPage.statusSekmesi);
         List<WebElement> statuler=select.getOptions();
         for (WebElement each: statuler
@@ -35,48 +57,29 @@ public class US014 {
             each.click();
         }
         System.out.println("statuler = " + statuler);
-        Driver.closeDriver();
-    */
-
-
-    @Then("kullanici My Inpatients sekmesine tiklar")
-    public void kullanici_my_inpatients_sekmesine_tiklar() throws InterruptedException {
-
-       // ortakLocatePages.myInpatientButonu.click();
-       // Thread.sleep(5000);
-       /* JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
-                js.executeScript("document.getElementByName('cigdemAPage.myInpatientButton').click();");*/
-       ReusableMethods.waitForVisibility(cigdemAPage.myInpatientButonu, 15);
-       cigdemAPage.myInpatientButonu.click();
-       //Thread.sleep(2000);
-    }
-
-    @Then("kullanici hastalara ait bilgilerini goruntuler")
-    public void kullanici_hastalara_ait_bilgilerini_goruntuler() {
-        cigdemAPage.hastaIdListesi.isEmpty();
-        cigdemAPage.startDateList.isEmpty();
-        cigdemAPage.endDateList.isEmpty();
-        cigdemAPage.descriptionList2.isEmpty();
-        cigdemAPage.createDateList.isEmpty();
-        cigdemAPage.appointmentList.isEmpty();
-        cigdemAPage.statusList.isEmpty();
-        cigdemAPage.roomList.isEmpty();
-        cigdemAPage.patientList.isEmpty();
 
     }
+    @Then("doktor rezerve edilmis odayı günceller")
+    public void doktor_rezerve_edilmis_odayı_günceller() {
 
-    @And("kullanici status menusunu gunceller")
-    public void kullaniciStatusMenusunuGunceller() {
-
-        for (WebElement each: cigdemAPage.statusList
-             ) {
-            each.click();
+        action.sendKeys(Keys.PAGE_DOWN).perform();
+        ReusableMethods.waitForVisibility(cigdemAPage.roomSekmesi,15);
+        Select select=new Select(cigdemAPage.roomSekmesi);
+        List<WebElement> rooms=select.getOptions();
+        for(WebElement each : rooms){
+            if(each.getText().contains("UNAVAILABLE")){
+                each.click();
+                break;
+            }
         }
+        action.sendKeys(Keys.ARROW_DOWN);
+
+        Assert.assertFalse(cigdemAPage.roomGuncellemeYazisi.isDisplayed());
+
+        String hastaRoomId=cigdemAPage.hastaRoomİd.getText();
+        System.out.println("hastaRoomId = " + hastaRoomId);
+ //Doktor rezerve edilmis odayı guncellemek istediginde bos oda varsa onu ataybiliyor, guncelleme mesaji gelemesine ragmen oda numarasi degismiyor!!!
     }
 
-    @And("kullanici My Inpatients sayfasinda Edit e tiklar")
-    public void kullaniciMyInpatientsSayfasindaEditETiklar() throws InterruptedException {
-        cigdemAPage.inpatientEditButton.click();
-        Thread.sleep(2000);
-    }
+
 }

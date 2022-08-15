@@ -15,6 +15,8 @@ public class US001 {
     RecepTPage recepPage = new RecepTPage();
     Faker fake;
 
+    JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+
 
     @Given("Kullanici Medunna ana sayfasina gider")
     public void kullanici_medunna_ana_sayfasina_gider() {
@@ -32,6 +34,7 @@ public class US001 {
     @Given("Kullanici SSN kutusuna geçerli bir {string} numarasi girer")
     public void kullanici_ssn_kutusuna_geçerli_bir_numarasi_girer(String SSN) {
         SSN = ReusableMethods.createSSN();
+        js.executeScript("arguments[0].scrollIntoView(true);", recepPage.ssnTextBox);
         recepPage.ssnTextBox.sendKeys(SSN);
 
 
@@ -41,6 +44,7 @@ public class US001 {
     public void kullanici_firstname_kutusuna_geçerli_bir_girer(String firstname) {
         fake = new Faker();
         firstname = fake.name().firstName();
+        js.executeScript("arguments[0].scrollIntoView(true);", recepPage.firstNameTextBox);
         recepPage.firstNameTextBox.sendKeys(firstname);
     }
 
@@ -48,6 +52,7 @@ public class US001 {
     public void kullanici_lastname_kutusuna_geçerli_bir_girer(String lastname) {
         fake = new Faker();
         lastname = fake.name().lastName();
+        js.executeScript("arguments[0].scrollIntoView(true);", recepPage.lastNameTextBox);
         recepPage.lastNameTextBox.sendKeys(lastname);
     }
 
@@ -55,6 +60,7 @@ public class US001 {
     public void kullanici_username_kutusuna_geçerli_bir_girer(String username) {
         fake = new Faker();
         username = fake.name().username();
+        js.executeScript("arguments[0].scrollIntoView(true);", recepPage.userNameTextBox);
         recepPage.userNameTextBox.sendKeys(username);
     }
 
@@ -62,13 +68,15 @@ public class US001 {
     public void kullanici_email_kutusuna_geçerli_bir_girer(String email) {
         fake = new Faker();
         email = fake.internet().emailAddress();
+        js.executeScript("arguments[0].scrollIntoView(true);", recepPage.emailTextBox);
         recepPage.emailTextBox.sendKeys(email);
     }
 
     @Given("Kullanici password kutusuna geçerli bir {string} girer")
     public void kullanici_password_kutusuna_geçerli_bir_girer(String password) {
-        recepPage.firstPasswordTextBox.sendKeys(ConfigReader.getProperty("UserPassword"));
-        recepPage.secondPasswordTextBox.sendKeys(ConfigReader.getProperty("UserPassword"));
+        js.executeScript("arguments[0].scrollIntoView(true);", recepPage.firstNameTextBox);
+        recepPage.firstPasswordTextBox.sendKeys(ConfigReader.getProperty("HastaPassword"));
+        recepPage.secondPasswordTextBox.sendKeys(ConfigReader.getProperty("HastaPassword"));
     }
 
     @Then("Kullanici register butonuna tıklar")
@@ -86,6 +94,7 @@ public class US001 {
     @Given("Kullanici SSN kutusuna geçersiz bir {string} numarasi girer")
     public void kullanici_ssn_kutusuna_geçersiz_bir_numarasi_girer(String invalidSSN) {
         invalidSSN = "123456789";
+        js.executeScript("arguments[0].scrollIntoView(true);", recepPage.ssnTextBox);
         recepPage.ssnTextBox.sendKeys(invalidSSN);
     }
 
@@ -96,6 +105,7 @@ public class US001 {
 
     @Given("Kullanici SSN kutusunu bos birakir")
     public void kullanici_ssn_kutusunu_bos_birakir() {
+        js.executeScript("arguments[0].scrollIntoView(true);", recepPage.ssnTextBox);
         recepPage.ssnTextBox.sendKeys("");
     }
 
@@ -106,6 +116,7 @@ public class US001 {
 
     @Given("Kullanici firstname kutusunu bos birakir")
     public void kullanici_firstname_kutusunu_bos_birakir() {
+        js.executeScript("arguments[0].scrollIntoView(true);", recepPage.firstNameTextBox);
         recepPage.firstNameTextBox.sendKeys("");
     }
 
@@ -116,6 +127,7 @@ public class US001 {
 
     @Given("Kullanici lastname kutusunu bos birakir")
     public void kullanici_lastname_kutusunu_bos_birakir() {
+        js.executeScript("arguments[0].scrollIntoView(true);", recepPage.lastNameTextBox);
         recepPage.lastNameTextBox.sendKeys("");
     }
 
@@ -124,41 +136,10 @@ public class US001 {
         Assert.assertTrue(recepPage.errorLastNameMessage.isDisplayed());
     }
 
-    @Given("Kullanici username kutusunu bos birakir")
-    public void kullanici_username_kutusunu_bos_birakir() {
-        recepPage.userNameTextBox.sendKeys("");
-    }
-
-    @Then("Kullanici bos username hata mesajinin gorunur oldugunu dogrular")
-    public void kullanici_bos_username_hata_mesajinin_gorunur_oldugunu_dogrular() {
-        Assert.assertTrue(recepPage.errorBlankUsernameMessage.isDisplayed());
-    }
-
-    @Given("Kullanici email kutusunu bos birakir")
-    public void kullanici_email_kutusunu_bos_birakir() {
-        recepPage.emailTextBox.sendKeys("");
-    }
-
-    @Then("Kullanici bos email hata mesajinin gorunur oldugunu dogrular")
-    public void kullanici_bos_email_hata_mesajinin_gorunur_oldugunu_dogrular() {
-        Assert.assertTrue(recepPage.errorBlankEmailMessage.isDisplayed());
-    }
-
-    @Given("Kullanici email kutusuna gecersiz bir {string} girer")
-    public void kullanici_email_kutusuna_gecersiz_bir_girer(String invalidEmail) {
-        invalidEmail = "medunna.com";
-        recepPage.emailTextBox.sendKeys(invalidEmail);
-    }
-
-    @Then("Kullanici gecersiz email hata mesajinin gorunur oldugunu dogrular")
-    public void kullanici_gecersiz_email_hata_mesajinin_gorunur_oldugunu_dogrular() {
-        Assert.assertTrue(recepPage.errorInvalidEmailMessage.isDisplayed());
-    }
-
-
     @And("Kullanici SSN kutusuna dokuz ile başlayan bir {string} numarasi girer")
     public void kullaniciSSNKutusunaDokuzIleBaşlayanBirNumarasiGirer(String SSN) {
         SSN = ReusableMethods.invalidSSN();
+        js.executeScript("arguments[0].scrollIntoView(true);", recepPage.ssnTextBox);
         recepPage.ssnTextBox.sendKeys(SSN);
 
     }

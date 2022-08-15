@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 @us004positive
+=======
+@smokeTest
+>>>>>>> 0c1c332a42bf869ee283d2986956f65ed1d1d80c
 Feature: US004 Giris Sayfasi Erisimi
 
   @us004tc001
