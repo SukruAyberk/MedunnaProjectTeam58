@@ -8,11 +8,16 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         plugin = {
                 "pretty",
-                "html:target/cucumber-reports.html",
+                "html:target/default-cucumber-reports.html",
                 "json:target/json-reports/cucumber.json",
                 "junit:target/xml-report/cucumber.xml",
                 "rerun:target/failedRerun.txt"
         },
+<<<<<<< HEAD
+        features = "./src/test/resources/features/UIFeatures",
+        glue = {"stepDefinitions","Hooks"},
+        tags = " @us005tc002",
+=======
         features = "./src/test/resources/features",
 
         glue = {"stepDefinitions", "hooks"},
@@ -20,8 +25,8 @@ import org.junit.runner.RunWith;
         tags = "@smokeTest",
 
 
+>>>>>>> main
         dryRun = false
-
 )
 public class Runner {
 }
