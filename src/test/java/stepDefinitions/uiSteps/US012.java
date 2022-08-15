@@ -25,8 +25,7 @@ public class US012 {
     public void doktor_request_a_test_buttonuna_tiklar() {
         waitFor(3);
         actions = new Actions(Driver.getDriver());
-        WebElement element = medunnaPage.requestATest;
-        actions.click(element).perform();
+        actions.click(medunnaPage.requestATest).perform();
     }
 
     @When("Doktor {string} tik atar")
