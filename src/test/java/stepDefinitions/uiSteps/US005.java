@@ -1,4 +1,4 @@
-package stepDefinitions.uiSteps;
+/*package stepDefinitions.uiSteps;
 
 import io.cucumber.java.en.*;
 import org.junit.Assert;
@@ -149,4 +149,4 @@ public class US005 {
         Thread.sleep(2000);
         emre.showTestButtons.click();
     }
-}
+}*/
