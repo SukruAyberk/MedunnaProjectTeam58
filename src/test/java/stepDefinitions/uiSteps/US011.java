@@ -18,6 +18,7 @@ import static utilities.ReusableMethods.*;
 
 public class US011 {
     RecepCPage medunnaPage = new RecepCPage();
+    Actions actions=new Actions(Driver.getDriver());
 
     @Then("Doktor My Pages menusunden My Appointments butonunu tiklar")
     public void doktor_my_pages_menusunden_my_appointments_butonunu_tiklar() {
@@ -35,6 +36,7 @@ public class US011 {
             if (each.getText().equals(istenenHastaId)) break;
             count++;
         }
+        actions.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).perform();
         Driver.getDriver().findElement(By.xpath("//tr[" + count + "]/td[13]")).click();
     }
 
@@ -88,7 +90,6 @@ public class US011 {
     @Then("Doktor Prescription, Description veri girilmedigini dogrular")
     public void doktorPrescriptionDescriptionVeriGirilmediginiDogrular() {
         waitFor(3);
-        Actions actions=new Actions(Driver.getDriver());
         if (!medunnaPage.prescriptionTextBox.getText().isEmpty()) actions.doubleClick(medunnaPage.prescriptionTextBox).sendKeys(Keys.DELETE).perform();
         if (!medunnaPage.descriptiontionTextBox.getText().isEmpty()) actions.doubleClick(medunnaPage.descriptiontionTextBox).sendKeys(Keys.DELETE).perform();
         Assert.assertTrue(medunnaPage.prescriptionTextBox.getText().isEmpty());
