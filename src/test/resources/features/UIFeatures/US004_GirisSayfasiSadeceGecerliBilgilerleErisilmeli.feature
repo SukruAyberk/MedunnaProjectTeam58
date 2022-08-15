@@ -10,7 +10,7 @@ Feature: US004 Giris Sayfasi Erisimi
     And Did you forget your password secenegi oldugu kontrol eder
     And Cancel butonu oldugu kontrol eder
     And user gecerli "newUsername" ve "newUserPassword" ile giris yapar
-    And user sing in butonuna tiklar
+    And singin butonuna basar
     And giris yaptigini dogrular
 
   @us004tc002
@@ -22,7 +22,7 @@ Feature: US004 Giris Sayfasi Erisimi
     And Did you forget your password secenegi oldugu kontrol eder
     And Cancel butonu oldugu kontrol eder
     And user gecerli "adminUsername" ve "adminPassword" ile giris yapar
-    And user sing in butonuna tiklar
+    And singin butonuna basar
     And giris yaptigini dogrular
 
   @us004tc003
@@ -34,7 +34,7 @@ Feature: US004 Giris Sayfasi Erisimi
     And Did you forget your password secenegi oldugu kontrol eder
     And Cancel butonu oldugu kontrol eder
     And user gecerli "Doctorsername" ve "DoctorPassword" ile giris yapar
-    And user sing in butonuna tiklar
+    And singin butonuna basar
     And giris yaptigini dogrular
 
   @us004tc004
@@ -46,7 +46,7 @@ Feature: US004 Giris Sayfasi Erisimi
     And Did you forget your password secenegi oldugu kontrol eder
     And Cancel butonu oldugu kontrol eder
     And user gecerli "PersonelUsername" ve "PersonelPassword" ile giris yapar
-    And user sing in butonuna tiklar
+    And singin butonuna basar
     And giris yaptigini dogrular
 
   @us004tc005
@@ -58,7 +58,7 @@ Feature: US004 Giris Sayfasi Erisimi
     And Did you forget your password secenegi oldugu kontrol eder
     And Cancel butonu oldugu kontrol eder
     And user gecerli "HastaUsername" ve "HastaPassword" ile giris yapar
-    And user sing in butonuna tiklar
+    And singin butonuna basar
     And giris yaptigini dogrular
 
 
