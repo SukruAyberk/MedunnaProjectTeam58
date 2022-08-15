@@ -1,8 +1,13 @@
 package pojos;
 
+
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Appointment {
-
-
+    private int id;
+    private String status;
     private String firstname;
     private String lastname;
     private String ssn;
@@ -16,13 +21,31 @@ public class Appointment {
     public Appointment() {
     }
 
-    public Appointment(String firstname, String lastname, String ssn, String email, String phoneNumber, String date) {
+    public Appointment(int id, String status, String firstname, String lastname, String ssn, String email, String phoneNumber, String date) {
+        this.id = id;
+        this.status = status;
         this.firstname = firstname;
         this.lastname = lastname;
         this.ssn = ssn;
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.date = date;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public String getFirstname() {
@@ -76,7 +99,9 @@ public class Appointment {
     @Override
     public String toString() {
         return "Appointment{" +
-                "firstname='" + firstname + '\'' +
+                "id=" + id +
+                ", status='" + status + '\'' +
+                ", firstname='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +
                 ", ssn='" + ssn + '\'' +
                 ", email='" + email + '\'' +

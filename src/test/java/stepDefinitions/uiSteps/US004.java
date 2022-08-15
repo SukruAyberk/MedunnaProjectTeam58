@@ -37,6 +37,7 @@ public class US004 {
         ReusableMethods.waitForClickablility(ayberk.userTeam58_symbol, 15);
         ayberk.userTeam58_symbol.click();
         Assert.assertTrue(ayberk.sing_out_button.isEnabled());
+        ayberk.sing_out_button.click();
     }
 
     @And("sayfaya giris yapilamadigini test eder")

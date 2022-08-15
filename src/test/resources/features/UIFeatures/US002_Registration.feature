@@ -1,8 +1,6 @@
 
-@US001-US002
+@smokeTest
 Feature:US002
-
-
 
   Scenario:TC001 kullanici bos username ile kayit olamamali
     Given Kullanici Medunna ana sayfasina gider
