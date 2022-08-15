@@ -35,7 +35,7 @@ public class OrtakLocatePages {
     @FindBy(xpath = "//*[text()='MY PAGES']")
     public WebElement myPagesButonu;
 
-    @FindBy(xpath = "//*[text()='My Appointments']")
+    @FindBy(xpath = "//span[text()='My Appointments']")
     public WebElement myAppointmentsButonu;
 
     @FindBy(xpath = "//*[text()='My Patients']")

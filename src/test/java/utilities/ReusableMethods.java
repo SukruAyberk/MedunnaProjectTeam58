@@ -149,19 +149,18 @@ public class ReusableMethods {
     public static String createSSN (){
         Random rnd=new Random();
         String SSN="";
+        int SSN1max=899;
+        int SSN1min=100;
+        int SSN2max=99;
+        int SSN2min=10;
+        int SSN3max=9999;
+        int SSN3min=1000;
 
-        int SSN1=rnd.nextInt(899);
-        int SSN2=rnd.nextInt(99);
-        int SSN3=rnd.nextInt(9999);
+        int SSN1=rnd.nextInt(SSN1max-SSN1min)+SSN1min;
+        int SSN2=rnd.nextInt(SSN2max-SSN2min)+SSN2min;
+        int SSN3=rnd.nextInt(SSN3max-SSN3min)+SSN3min;
 
-        if (SSN1>99&&SSN2>9){
-            if(SSN3>999){
-                SSN=SSN1+"-"+SSN2+"-"+SSN3;
-
-            }
-        } else {
-            createSSN();
-        }
+        SSN=SSN1+"-"+SSN2+"-"+SSN3;
 
         return SSN;
     }
@@ -169,20 +168,18 @@ public class ReusableMethods {
     public static String invalidSSN (){
         Random rnd=new Random();
         String SSN="";
+        int SSN1max=999;
+        int SSN1min=900;
+        int SSN2max=99;
+        int SSN2min=10;
+        int SSN3max=9999;
+        int SSN3min=1000;
 
-        int SSN1=rnd.nextInt(999);
-        int SSN2=rnd.nextInt(99);
-        int SSN3=rnd.nextInt(9999);
+        int SSN1=rnd.nextInt(SSN1max-SSN1min)+SSN1min;
+        int SSN2=rnd.nextInt(SSN2max-SSN2min)+SSN2min;
+        int SSN3=rnd.nextInt(SSN3max-SSN3min)+SSN3min;
 
-        if (SSN1>899&&SSN2>9){
-            if(SSN3>999){
-                SSN=SSN1+"-"+SSN2+"-"+SSN3;
-            }
-        }else if (SSN1<900){
-            invalidSSN();
-        } else {
-            invalidSSN();
-        }
+        SSN=SSN1+"-"+SSN2+"-"+SSN3;
 
         return SSN;
     }
