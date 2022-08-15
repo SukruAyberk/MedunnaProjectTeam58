@@ -1,4 +1,4 @@
-@us004positive
+@smokeTest
 Feature: US004 Giris Sayfasi Erisimi
 
   @us004tc001

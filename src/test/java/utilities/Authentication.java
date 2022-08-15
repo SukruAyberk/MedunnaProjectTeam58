@@ -19,13 +19,13 @@ public class Authentication {
 
 
     public static String generateToken() {
-        String username = "Team83Admin";
-        String password = "Batch44+";
+        String username = "adminteam58";
+        String password = "Medunna.Team58";
 
         Map <String, Object> map = new HashMap<>();
         map.put("username", username);
         map.put("password",password);
-        map.put("rememberme","true");
+        map.put("rememberme",true);
 
         String endPoint = "https://www.medunna.com/api/authenticate";
 
