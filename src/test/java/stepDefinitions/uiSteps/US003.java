@@ -125,7 +125,7 @@ public class US003 {
             Assert.assertEquals(expectedStrengthBar3, actualStrengthBar3);
             Assert.assertEquals(expectedStrengthBar4, actualStrengthBar4);
             Assert.assertEquals(expectedStrengthBar5, actualStrengthBar5);
-            Assert.assertTrue(password.length() < 7);
+            Assert.assertTrue(password.length() >= 7);
         }
 
         Thread.sleep(1000);

@@ -6,7 +6,6 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import pages.RecepCPage;
@@ -26,8 +25,7 @@ public class US012 {
     public void doktor_request_a_test_buttonuna_tiklar() {
         waitFor(3);
         actions = new Actions(Driver.getDriver());
-        WebElement element = medunnaPage.requestATest;
-        actions.click(element).perform();
+        actions.click(medunnaPage.requestATest).perform();
     }
 
     @When("Doktor {string} tik atar")

@@ -1,5 +1,6 @@
-Feature: US012 Doktor test isteyebilmeli
 @us12
+Feature: US012 Doktor test isteyebilmeli
+
   Scenario: TC001 Doktor test isteyebilmeli
     Given doktor "medunnaUrl" anasayfasinda
     Then doktor profil sembolune tiklar
