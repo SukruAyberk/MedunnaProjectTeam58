@@ -9,7 +9,7 @@ Feature: US011 My Appointments Doktor tarafindan duzenlenebilmeli
     Then doktor gecerli "Doctorsername" ve "DoctorPassword" ile giris yapar
     Then doktor sing in butonuna tiklar
     Then Doktor My Pages menusunden My Appointments butonunu tiklar
-    Then  Doktor "160942" id nolu hastasinin Edit buttonuna tiklar
+    Then  Doktor "175894" id nolu hastasinin Edit buttonuna tiklar
     And Doktor Create or Edit an Appointment sayfasinin acildigini test eder
     And Doktor Sayfayi kapatir
 
@@ -21,7 +21,7 @@ Feature: US011 My Appointments Doktor tarafindan duzenlenebilmeli
     Then doktor gecerli "Doctorsername" ve "DoctorPassword" ile giris yapar
     Then doktor sing in butonuna tiklar
     Then Doktor My Pages menusunden My Appointments butonunu tiklar
-    Then Doktor Guncellenen "160536" hastasinin ID, Start DateTime, End DateTime, Status, Physician, Patient gurundugunu dogrular
+    Then Doktor Guncellenen "175894" hastasinin ID, Start DateTime, End DateTime, Status, Physician, Patient gurundugunu dogrular
     And Doktor Sayfayi kapatir
 
   Scenario: TC003 Doktor  Anamnesis, Treatment ve Diagnosis alanlarını doldurması zorunludur
@@ -32,7 +32,7 @@ Feature: US011 My Appointments Doktor tarafindan duzenlenebilmeli
     Then doktor gecerli "Doctorsername" ve "DoctorPassword" ile giris yapar
     Then doktor sing in butonuna tiklar
     Then Doktor My Pages menusunden My Appointments butonunu tiklar
-    Then  Doktor "160944" id nolu hastasinin Edit buttonuna tiklar
+    Then  Doktor "175894" id nolu hastasinin Edit buttonuna tiklar
     And Doktor Anamnesis, Treatment, Diagnosis'e veri girildigini dogrular
     And Doktor Save buttonuna tiklar
     And Doktor kayit yapildigini test eder.
@@ -46,7 +46,7 @@ Feature: US011 My Appointments Doktor tarafindan duzenlenebilmeli
     Then doktor gecerli "Doctorsername" ve "DoctorPassword" ile giris yapar
     Then doktor sing in butonuna tiklar
     Then Doktor My Pages menusunden My Appointments butonunu tiklar
-    Then  Doktor "160942" id nolu hastasinin Edit buttonuna tiklar
+    Then  Doktor "175894" id nolu hastasinin Edit buttonuna tiklar
     Then Doktor Prescription, Description veri girilmedigini dogrular
     And Doktor Save buttonuna tiklar
     And Doktor kayit yapildigini test eder.
@@ -59,7 +59,7 @@ Feature: US011 My Appointments Doktor tarafindan duzenlenebilmeli
     Then doktor gecerli "Doctorsername" ve "DoctorPassword" ile giris yapar
     Then doktor sing in butonuna tiklar
     Then Doktor My Pages menusunden My Appointments butonunu tiklar
-    Then  Doktor "160942" id nolu hastasinin Edit buttonuna tiklar
+    Then  Doktor "175894" id nolu hastasinin Edit buttonuna tiklar
     Then Doktor Prescription, Description veri girisi yapildigini dogrular
     And Doktor Save buttonuna tiklar
     And Doktor kayit yapildigini test eder.

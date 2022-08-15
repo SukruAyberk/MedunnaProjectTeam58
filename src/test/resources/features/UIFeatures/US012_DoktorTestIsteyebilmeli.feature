@@ -23,7 +23,7 @@ Feature: US012 Doktor test isteyebilmeli
     Then doktor gecerli "Doctorsername" ve "DoctorPassword" ile giris yapar
     Then doktor sing in butonuna tiklar
     And Doktor My Pages menusunden My Appointments butonunu tiklar
-    And  Doktor "160942" id nolu hastasinin Edit buttonuna tiklar
+    And  Doktor "175894" id nolu hastasinin Edit buttonuna tiklar
     When Doktor Request A Test buttonuna tiklar
     And Doktor Test Items Sayfasinda Glucose , Urea, Creatinine, Sodium, Potassium, Total protein, Albumin, Hemoglobin oldugunu dogrular
     And Doktor Sayfayi kapatir

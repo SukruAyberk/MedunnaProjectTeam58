@@ -17,10 +17,10 @@ import org.junit.runner.RunWith;
 
         glue = {"stepDefinitions", "hooks"},
 
-        tags = "@us003",
+        tags = "@us12",
 
 
-        dryRun = false
+        dryRun = true
 
 )
 public class Runner {
