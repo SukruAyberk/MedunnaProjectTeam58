@@ -8,12 +8,13 @@ import io.restassured.specification.RequestSpecification;
 import org.junit.Assert;
 import pojos.Appointment;
 
+
 import static io.restassured.RestAssured.given;
 import static utilities.Authentication.generateToken;
 
 public class US010 {
 
-    static Appointment appointment;
+    static Appointment appointmentUs10;
     static Response response;
 
     public static void main(String[] args) throws JsonProcessingException {
@@ -30,12 +31,12 @@ public class US010 {
 
         //actual data olustur object mapperdan aliyoruz
         ObjectMapper obj=new ObjectMapper();
-        appointment= obj.readValue(response.asString(),Appointment.class);
-        System.out.println("appointment = " + appointment);
+        appointmentUs10 = obj.readValue(response.asString(), Appointment.class);
+        System.out.println("appointment = " + appointmentUs10);
 
         //karsilastiracagiz
-        Assert.assertEquals(175894,appointment.getId());
-        Assert.assertEquals("COMPLETED",appointment.getStatus());
+        Assert.assertEquals(175894, appointmentUs10.getId());
+        Assert.assertEquals("COMPLETED", appointmentUs10.getStatus());
 
 
     }
