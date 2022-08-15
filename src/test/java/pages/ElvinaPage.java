@@ -14,7 +14,7 @@ public class ElvinaPage{
     @FindBy(id = "account-menu")
     public WebElement accountMenu;
 
-    @FindBy(xpath = "//a[@class='dropdown-item active']")
+    @FindBy(xpath = "//span[text()='Settings']")
     public WebElement settingButonu;
 
     @FindBy(id = "settings-title")

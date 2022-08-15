@@ -11,42 +11,8 @@ import utilities.Driver;
 
 public class US006 {
     static ElvinaPage elvinaPage = new ElvinaPage();
-    static OrtakLocatePages ortakLocatePages = new OrtakLocatePages();
+   // static OrtakLocatePages ortakLocatePages = new OrtakLocatePages();
 
-    @Given("user {string} anasayfasinda")
-    public void user_anasayfasinda(String medunnaUrl) throws InterruptedException {
-        Driver.getDriver().get(ConfigReader.getProperty(medunnaUrl));
-        Thread.sleep(2000);
-        String expectedUrl = "https://medunna.com/";
-        String actuelUrl = Driver.getDriver().getCurrentUrl();
-        Assert.assertEquals(expectedUrl, actuelUrl);
-    }
-
-    @Then("user user sembolune tiklar")
-    public void user_user_sembolune_tiklar() throws InterruptedException {
-        ortakLocatePages.profilSimgesi.click();
-        Thread.sleep(2000);
-        ortakLocatePages.userDropdownDogrulama.isDisplayed();
-    }
-
-    @Then("user singIn sekmesi tiklar")
-    public void user_sing_in_sekmesi_tiklar() {
-        ortakLocatePages.signInButton1.click();
-        ortakLocatePages.signInYazisi.isDisplayed();
-    }
-
-    @Then("user gecerli {string} ve {string} ile giris yapar")
-    public void user_gecerli_ve_ile_giris_yapar(String newUsername, String newUserPassword) {
-        ortakLocatePages.usernameBox.sendKeys(ConfigReader.getProperty("newUsername"));
-        ortakLocatePages.passwordBox.sendKeys(ConfigReader.getProperty("newUserPassword"));
-    }
-
-    @Then("user sing in butonuna tiklar")
-    public void user_sing_in_butonuna_tiklar() throws InterruptedException {
-        ortakLocatePages.signInButonu2.submit();
-        Thread.sleep(2000);
-        ortakLocatePages.userGirisiDogrulama.isDisplayed();
-    }
 
     @Then("user accont menu-ye tiklar")
     public void userAccontMenuYeTiklar() {

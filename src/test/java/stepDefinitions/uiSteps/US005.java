@@ -1,4 +1,4 @@
-package stepDefinitions.uiSteps;
+/*package stepDefinitions.uiSteps;
 
 import io.cucumber.java.en.*;
 import org.openqa.selenium.Keys;
@@ -133,4 +133,4 @@ public class US005 {
 
         emre.appointmentAlertMessage.isDisplayed();
     }
-}
+}*/
