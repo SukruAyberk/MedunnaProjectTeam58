@@ -13,10 +13,13 @@ import org.junit.runner.RunWith;
                 "junit:target/xml-report/cucumber.xml",
                 "rerun:target/failedRerun.txt"
         },
-        features = "./src/test/resources/features/UIFeatures",
+        features = "./src/test/resources/features",
 
-        glue = {"stepDefinitions", "Hooks"},
-        tags = "@us010",
+        glue = {"stepDefinitions", "hooks"},
+
+        tags = "@us003",
+
+
         dryRun = false
 
 )
