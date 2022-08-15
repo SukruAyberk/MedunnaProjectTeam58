@@ -105,6 +105,7 @@ public class CigdemAPage {
     @FindBy(xpath = "//table[@class='table']" )
     public WebElement hastaBilgileri;
 
+
     @FindBy(xpath = "//*[text()='In Patients']")
     public WebElement inPatientYazisi;
 
@@ -116,4 +117,5 @@ public class CigdemAPage {
 
     @FindBy(xpath = "//select[@name='room.id']")
     public WebElement hastaRoomİd;
+
 }
