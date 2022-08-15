@@ -55,12 +55,17 @@ public class EmrePage {
     @FindBy (xpath = "//*[text()='Appointment registration saved!']")
     public WebElement appointmentAlertMessage;
 
+    @FindBy (xpath = "//li[@class='dropdown nav-item'][1]")
+    public WebElement myPagesButton;
 
+    @FindBy (xpath = "//a[@class='dropdown-item'][1]")
+    public WebElement myAppointmentsButton;
 
+    @FindBy (xpath = "//h2[text()='Appointments']")
+    public WebElement appointmentHeaderTitle;
 
-
-
-
+    @FindBy (xpath = "//span[@class='d-none d-md-inline'][1]")
+    public WebElement showTestButtons;
 
     }
 

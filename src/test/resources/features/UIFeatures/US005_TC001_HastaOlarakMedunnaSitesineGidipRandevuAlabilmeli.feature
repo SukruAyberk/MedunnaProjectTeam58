@@ -3,6 +3,8 @@ Feature: Medunna sitesinden randevu alma
     Given patient "medunnaUrl" anasayfasinda
 
 
+
+
   @us005tc001
   Scenario: Kullanici gecerli bilgilerle randevu olusturabilmeli
     Then Kullanici Make an Appointment butonuna tiklar
@@ -25,6 +27,17 @@ Feature: Medunna sitesinden randevu alma
     And Kullanici Phone kismina 3. ve 6. rakamdan sonra "-" olan 10 haneli bir telefon numarasi girer
     And Kullanici "Send an Appoinment Request" butonuna tiklayarak randevu alir
     And Kullanici çıkan kaydınız oluşturuldu mesajını görerek kaydı tamamlar
+
+  @us005tc003
+  Scenario: patient aldigi randevuyu goruntuleyebilmeli
+    Then patient profil sembolune tiklar
+    Then patient singIn sekmesi tiklar
+    Then patient gecerli "HastaUsername" ve "HastaPassword" ile giris yapar
+    Then patient sing in butonuna tiklar
+    Then patient "My pages" butonuna tiklar
+    Then patient "my appointment" butonuna tiklayar
+    Then patient "Appointment" basliginda randevularini goruntuler
+
 
 
 
