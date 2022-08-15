@@ -1,12 +1,13 @@
 package stepDefinitions.uiSteps;
 
 import io.cucumber.java.en.*;
+import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.asserts.SoftAssert;
 import pages.EmrePage;
 import utilities.ConfigReader;
 import utilities.Driver;
@@ -16,7 +17,6 @@ import java.util.function.Function;
 
 public class US005 {
     EmrePage emre = new EmrePage();
-    SoftAssert softassert = new SoftAssert();
     WebDriver driver = new ChromeDriver();
 
     String hastaAdi="HastaTeam58Ad";
@@ -37,7 +37,7 @@ public class US005 {
     @Then("kullanici Make an Appointment bolumune gittigini dogrular")
     public void kullanici_make_an_appointment_bolumune_gittigini_dogrular() throws InterruptedException {
 
-        emre.makeAppointmentPage.isDisplayed();
+        Assert.assertTrue(emre.makeAppointmentPage.isDisplayed());
 
         Thread.sleep(2000);
     }
@@ -46,7 +46,7 @@ public class US005 {
     public void kullanici_first_name_kismini_bos_birakamadigini_gorur() {
 
         emre.firstNameButton.sendKeys(" "+ Keys.TAB);
-        emre.firstNameIsntEmpty.isDisplayed();
+        Assert.assertTrue(emre.firstNameIsntEmpty.isDisplayed());
 
 
     }
@@ -54,25 +54,25 @@ public class US005 {
     public void kullanici_last_name_kismini_bos_birakamadigini_gorur() {
 
         emre.lastNameButton.sendKeys(" "+Keys.TAB);
-        emre.lastNameIsntEmpty.isDisplayed();
+        Assert.assertTrue(emre.lastNameIsntEmpty.isDisplayed());
 
     }
     @Then("Kullanici SSN kismini bos birakamadigini gorur")
     public void kullanici_ssn_kismini_bos_birakamadigini_gorur() {
         emre.ssnButton.sendKeys(" "+Keys.TAB);
-        emre.ssnButtonIsntEmpty.isDisplayed();
+        Assert.assertTrue(emre.ssnButtonIsntEmpty.isDisplayed());
 
     }
     @Then("Kullanici Mail kismini bos birakamadigini gorur")
     public void kullanici_mail_kismini_bos_birakamadigini_gorur() throws InterruptedException {
         emre.emailButton.sendKeys(" "+Keys.TAB);
-        emre.emailButtonIsntEmpty.isDisplayed();
+        Assert.assertTrue(emre.emailButtonIsntEmpty.isDisplayed());
         Thread.sleep(2000);
     }
     @Then("Kullanici Phone kismini bos birakamadigini gorur")
     public void kullanici_phone_kismini_bos_birakamadigini_gorur() {
         emre.phoneButton.sendKeys(" "+Keys.TAB);
-        emre.phoneButtonIsntEmpty.isDisplayed();
+        Assert.assertTrue(emre.phoneButtonIsntEmpty.isDisplayed());
     }
     @Then("Kullanici sayfayi kapatir")
     public void kullanici_sayfayi_kapatir() {
@@ -95,7 +95,6 @@ public class US005 {
         emre.makeAppointmentPage.isDisplayed();
         String expectedAppoinmentTitle = "Make an Appointment";
         String actualTitle= emre.actualAppointmentTitle.getText();
-        softassert.assertEquals(expectedAppoinmentTitle,actualTitle,"beklenen yazı ile aktif yazı aynı");
 
     }
     @Then("Kullanici First Name kismina random bir karakter girer")
@@ -130,7 +129,24 @@ public class US005 {
     }
     @Then("Kullanici çıkan kaydınız oluşturuldu mesajını görerek kaydı tamamlar")
     public void kullanici_cikan_kaydiniz_olusturuldu_mesajini_gorerek_kaydi_tamamlar() {
+        Assert.assertTrue(emre.appointmentAlertMessage.isDisplayed());
+    }
 
-        emre.appointmentAlertMessage.isDisplayed();
+    @Then("patient {string} butonuna tiklar")
+    public void patient_butonuna_tiklar(String string) throws InterruptedException {
+        emre.myPagesButton.click();
+        Thread.sleep(3000);
+
+    }
+    @Then("patient {string} butonuna tiklayar")
+    public void patient_butonuna_tiklayar(String string) throws InterruptedException {
+        emre.myAppointmentsButton.click();
+        Thread.sleep(2000);
+    }
+    @Then("patient {string} basliginda randevularini goruntuler")
+    public void patient_basliginda_randevularini_goruntuler(String string) throws InterruptedException {
+        Assert.assertTrue(emre.appointmentHeaderTitle.isDisplayed());
+        Thread.sleep(2000);
+        emre.showTestButtons.click();
     }
 }

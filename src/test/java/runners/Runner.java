@@ -13,20 +13,15 @@ import org.junit.runner.RunWith;
                 "junit:target/xml-report/cucumber.xml",
                 "rerun:target/failedRerun.txt"
         },
-<<<<<<< HEAD
-        features = "./src/test/resources/features/UIFeatures",
-        glue = {"stepDefinitions","Hooks"},
-        tags = " @us005tc002",
-=======
+
         features = "./src/test/resources/features",
 
         glue = {"stepDefinitions", "hooks"},
 
-        tags = "@smokeTest",
+        tags = "@us005tc003",
 
 
->>>>>>> main
-        dryRun = false
+        dryRun = true
 )
 public class Runner {
 }
