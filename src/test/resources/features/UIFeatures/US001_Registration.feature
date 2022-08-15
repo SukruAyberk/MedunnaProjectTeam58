@@ -1,9 +1,9 @@
 
-@US001-US002
+@smokeTest
 Feature: Registration Ozelligi
 
 
-  @US001_UIRegistration
+
   Scenario: TC001 kullanici gecerli bilgiler ile kayit olabilmeli
     Given Kullanici Medunna ana sayfasina gider
     And Kullanici Register butonuna tiklar
