@@ -39,6 +39,49 @@ public class ErvaPage {
     @FindBy (xpath = "//*[@class='jh-entity-details']")
     public WebElement kayitBilgileri;
 
+    @FindBy(xpath = "//input[@name='id']")
+    public WebElement id;
+
+    @FindBy (xpath="//input[@name='firstName']")
+    public WebElement firstName;
+
+    @FindBy (xpath ="//input[@name='lastName']" )
+    public WebElement lastname;
+
+    @FindBy (xpath = "//input[@name='birthDate']")
+    public WebElement birthDate;
+
+    @FindBy (xpath = "//input[@name='email']")
+    public WebElement email;
+
+    @FindBy (xpath = "//input[@name='phone']")
+    public WebElement phone;
+
+    @FindBy (xpath = "//select[@name='gender']")
+    public WebElement gender;
+
+    @FindBy (xpath = "//input[@name='adress']")
+    public WebElement adress;
+
+    @FindBy (xpath = "//textarea[@name='description']")
+    public WebElement description;
+
+    @FindBy (xpath = "//select[@name='user.id']")
+    public WebElement user;
+
+    @FindBy (xpath = "//select[@name='country.id']")
+    public WebElement country;
+
+    @FindBy (xpath = "//select[@name='cstate.id']")
+    public  WebElement stateCity;
+
+    @FindBy (xpath = "//select[@name='bloodGroup']")
+    public WebElement bloodGroup;
+
+    @FindBy (xpath = "//span[text()='Save']")
+    public  WebElement saveButonu;
+
+
 
 
 }

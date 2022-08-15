@@ -104,4 +104,5 @@ public class CigdemAPage {
 
     @FindBy(xpath = "//tbody//tr")
     public WebElement hastaBilgileri;
+
 }
