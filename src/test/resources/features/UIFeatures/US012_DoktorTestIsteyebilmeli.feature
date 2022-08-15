@@ -1,3 +1,4 @@
+@us12
 Feature: US012 Doktor test isteyebilmeli
 
   Scenario: TC001 Doktor test isteyebilmeli

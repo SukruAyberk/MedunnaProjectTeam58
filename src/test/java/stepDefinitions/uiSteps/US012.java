@@ -5,13 +5,13 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.testng.asserts.SoftAssert;
 import pages.RecepCPage;
 import utilities.Driver;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.openqa.selenium.By.xpath;
@@ -33,19 +33,24 @@ public class US012 {
     public void
     doktor_tik_atar(String istenenTest) {
         waitFor(3);
-        List<WebElement> testNames = medunnaPage.testName;
+        JavascriptExecutor js=(JavascriptExecutor) Driver.getDriver();
+
+        List<WebElement> testNames = medunnaPage.testNames;
         int count = 1;
         String testId = "";
+        WebElement istenenWebElement = null;
 
         for (WebElement each : testNames) {
             if (each.getText().equals(istenenTest)) {
                 System.out.println("count" + count);
+                istenenWebElement=Driver.getDriver().findElement(By.xpath("//tr["+ (count)+"]/td[2]"));
                 testId = Driver.getDriver().findElement(By.xpath("//tr[" + count + "]/td[1]")).getText();
                 break;
             }
             count++;
         }
         System.out.println("testId = " + testId);
+        js.executeScript("arguments[0].click();",istenenWebElement);
         Driver.getDriver().findElement(By.id(testId)).click();
 
     }
@@ -61,27 +66,20 @@ public class US012 {
     @And("Doktor Test Items Sayfasinda Glucose , Urea, Creatinine, Sodium, Potassium, Total protein, Albumin, Hemoglobin oldugunu dogrular")
     public void doktorTestItemsSayfasindaGlucoseUreaCreatinineSodiumPotassiumTotalProteinAlbuminHemoglobinOldugunuDogrular() {
         waitFor(5);
-        String actual1 = "", actual2 = "", actual3 = "", actual4 = "", actual5 = "", actual6 = "", actual7 = "", actual8 = "";
-        SoftAssert softAssert = new SoftAssert();
-        List<WebElement> testNames = medunnaPage.testName;
-        for (WebElement each : testNames) {
-                if (each.getText().equals("Glucose")) actual1 = "Glucose";
-                if (each.getText().equals("Urea")) actual2 = "Urea";
-                if (each.getText().equals("Creatinine")) actual3 = "Creatinine";
-                if (each.getText().equals("Sodium")) actual4 = "Sodium";
-                if (each.getText().equals("Potassium")) actual5 = "Potassium";
-                if (each.getText().equals("Total protein")) actual6 = "Total protein";
-                if (each.getText().equals("Albumin")) actual7 = "Albumin";
-                if (each.getText().equals("Hemoglobin")) actual8 = "Hemoglobin";
+        List<String> expectedTestList=new ArrayList<>();
+        expectedTestList.add("Glucose");
+        expectedTestList.add("Urea");
+        expectedTestList.add("Creatinine");
+        expectedTestList.add("Sodium");
+        expectedTestList.add("Potassium");
+        expectedTestList.add("Total protein");
+        expectedTestList.add("Albumin");
+        expectedTestList.add("Hemoglobin");
+
+        List<String> actualTestList=new ArrayList<>();
+        for (WebElement each:medunnaPage.testNames){
+            actualTestList.add(each.getText());
         }
-        softAssert.assertTrue(actual1.equals("Glucose"), "Glucose testi bulunamamıştır");
-        softAssert.assertTrue(actual2.equals("Urea"), "Urea testi bulunamamıştır");
-        softAssert.assertTrue(actual3.equals("Creatinine"), "Creatinine testi bulunamamıştır");
-        softAssert.assertTrue(actual4.equals("Sodium"), "Sodium testi bulunamamıştır");
-        softAssert.assertTrue(actual5.equals("Potassium"), "Potassium testi bulunamamıştır");
-        softAssert.assertTrue(actual6.equals("Total protein"), "Total protein testi bulunamamıştır");
-        softAssert.assertTrue(actual7.equals("Albumin"), "Albumin testi bulunamamıştır");
-        softAssert.assertTrue(actual8.equals("Hemoglobin"), "Hemoglobin testi bulunamamıştır");
-        softAssert.assertAll();
+        Assert.assertTrue(actualTestList.containsAll(expectedTestList));
     }
 }

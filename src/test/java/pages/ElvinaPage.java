@@ -10,19 +10,26 @@ public class ElvinaPage{
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
+
+    @FindBy(id = "account-menu")
+    public WebElement accountMenu;
+
     @FindBy(xpath = "//a[@class='dropdown-item active']")
     public WebElement settingButonu;
 
+    @FindBy(id = "settings-title")
+    public WebElement settingsForUserText;
+
     @FindBy(xpath = "//input[@id='firstName']")
-    public WebElement firstnameGuncelleme;
+    public WebElement firstnameUpdate;
 
     @FindBy(xpath = "//input[@id='lastName']")
-    public WebElement lastnameGuncelleme;
+    public WebElement lastnameUpdate;
 
     @FindBy(xpath = "//input[@id='email']")
-    public WebElement eMailGuncelleme;
+    public WebElement eMailUpdate;
 
-    @FindBy(xpath = "//button[@type='submit']")
+    @FindBy(xpath = "//span[text()='Save']")
     public WebElement saveButonu;
 
 

@@ -2,15 +2,14 @@ package stepDefinitions.uiSteps;
 
 
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.asserts.SoftAssert;
 import pages.RecepCPage;
-import utilities.ConfigReader;
 import utilities.Driver;
 
 import java.util.List;
@@ -19,28 +18,6 @@ import static utilities.ReusableMethods.*;
 
 public class US011 {
     RecepCPage medunnaPage = new RecepCPage();
-
-  // @Given("Doktor {string} anasayfasinda")
-  // public void doktor_anasayfasinda(String istenenurl) {
-  //     Driver.getDriver().get(ConfigReader.getProperty(istenenurl));
-  // }
-
-  // @Then("Doktor user sembolune basar")
-  // public void doktor_user_sembolune_basar() {
-  //     medunnaPage.account.click();
-  // }
-
-  // @And("Doktor Signin butonuna basar")
-  // public void doktorSigninButonunaBasar() {
-  //     medunnaPage.girisSignin.click();
-  // }
-
-  // @Then("Doktor {string} username , {string} paswordu girer ve Sign in butonunu tiklar")
-  // public void doktor_username_paswordu_girer_ve_sign_in_butonunu_tiklar(String username, String password) {
-  //     medunnaPage.username.sendKeys(ConfigReader.getProperty(username));
-  //     medunnaPage.password.sendKeys(ConfigReader.getProperty(password));
-  //     medunnaPage.kullaniciSigninButton.click();
-  // }
 
     @Then("Doktor My Pages menusunden My Appointments butonunu tiklar")
     public void doktor_my_pages_menusunden_my_appointments_butonunu_tiklar() {
@@ -88,49 +65,51 @@ public class US011 {
             if (each.getText().equals(istenenHastaId)) break;
             count++;
         }
-        SoftAssert softAssert = new SoftAssert();
-        softAssert.assertTrue(Driver.getDriver().findElement(By.xpath("//tr[" + count + "]/td[1]")).isDisplayed(), "ID Görüntülenemiyor"); // ID
-        softAssert.assertTrue(Driver.getDriver().findElement(By.xpath("//tr[" + count + "]/td[2]")).isDisplayed(), "Start DateTime Görüntülenemiyor"); // Start DateTime
-        softAssert.assertTrue(Driver.getDriver().findElement(By.xpath("//tr[" + count + "]/td[3]")).isDisplayed(), "End DateTime Görüntülenemiyor"); // End DateTime
-        softAssert.assertTrue(Driver.getDriver().findElement(By.xpath("//tr[" + count + "]/td[4]")).isDisplayed(), "Status Görüntülenemiyor"); // Status
-        softAssert.assertTrue(Driver.getDriver().findElement(By.xpath("//tr[" + count + "]/td[11]")).isDisplayed(), "Physician Görüntülenemiyor"); // Physician
-        softAssert.assertTrue(Driver.getDriver().findElement(By.xpath("//tr[" + count + "]/td[12]")).isDisplayed(), "Patient Görüntülenemiyor"); // Patient
-        softAssert.assertAll();
+        Assert.assertTrue(Driver.getDriver().findElement(By.xpath("//tr[" + count + "]/td[1]")).isDisplayed()); // ID
+        Assert.assertTrue(Driver.getDriver().findElement(By.xpath("//tr[" + count + "]/td[2]")).isDisplayed()); // Start DateTime
+        Assert.assertTrue(Driver.getDriver().findElement(By.xpath("//tr[" + count + "]/td[3]")).isDisplayed()); // End DateTime
+        Assert.assertTrue(Driver.getDriver().findElement(By.xpath("//tr[" + count + "]/td[4]")).isDisplayed()); // Status
+        Assert.assertTrue(Driver.getDriver().findElement(By.xpath("//tr[" + count + "]/td[11]")).isDisplayed()); // Physician
+        Assert.assertTrue(Driver.getDriver().findElement(By.xpath("//tr[" + count + "]/td[12]")).isDisplayed()); // Patient
     }
 
     @And("Doktor Anamnesis, Treatment, Diagnosis'e veri girildigini dogrular")
     public void doktorAnamnesisTreatmentDiagnosisEVeriGirildiginiDogrular() {
         waitFor(3);
-        SoftAssert softAssert = new SoftAssert();
-        softAssert.assertTrue(medunnaPage.anamnesisTextBox.getAttribute("class").equals("is-untouched is-pristine av-valid form-control"), "Anamnesis doldurulmak zorundadır");
-        softAssert.assertTrue(medunnaPage.treatmentTextBox.getAttribute("class").equals("is-untouched is-pristine av-valid form-control"), "Treatment doldurulmak zorundadır");
-        softAssert.assertTrue(medunnaPage.diagnosisTextBox.getAttribute("class").equals("is-untouched is-pristine av-valid form-control"), "Diagnosis doldurulmak zorundadır");
-        softAssert.assertAll();
+        if (medunnaPage.anamnesisTextBox.getText().isEmpty()) medunnaPage.anamnesisTextBox.sendKeys("Anamnesis");
+        if (medunnaPage.treatmentTextBox.getText().isEmpty()) medunnaPage.treatmentTextBox.sendKeys("Treatment");
+        if (medunnaPage.diagnosisTextBox.getText().isEmpty()) medunnaPage.diagnosisTextBox.sendKeys("Diagnosis"+ Keys.TAB);
+        Assert.assertFalse(medunnaPage.anamnesisTextBox.getText().isEmpty());
+        Assert.assertFalse(medunnaPage.treatmentTextBox.getText().isEmpty());
+        Assert.assertFalse(medunnaPage.diagnosisTextBox.getText().isEmpty());
+
     }
 
     @Then("Doktor Prescription, Description veri girilmedigini dogrular")
     public void doktorPrescriptionDescriptionVeriGirilmediginiDogrular() {
         waitFor(3);
-        SoftAssert softAssert = new SoftAssert();
-        softAssert.assertTrue(medunnaPage.prescriptionTextBox.getText().isEmpty(), "Prescription boş bırakılmalı");
-        softAssert.assertTrue(medunnaPage.descriptiontionTextBox.getText().isEmpty(), "Description boş bırakılmalı");
-        softAssert.assertAll();
+        Actions actions=new Actions(Driver.getDriver());
+        if (!medunnaPage.prescriptionTextBox.getText().isEmpty()) actions.doubleClick(medunnaPage.prescriptionTextBox).sendKeys(Keys.DELETE).perform();
+        if (!medunnaPage.descriptiontionTextBox.getText().isEmpty()) actions.doubleClick(medunnaPage.descriptiontionTextBox).sendKeys(Keys.DELETE).perform();
+        Assert.assertTrue(medunnaPage.prescriptionTextBox.getText().isEmpty());
+        Assert.assertTrue(medunnaPage.descriptiontionTextBox.getText().isEmpty());
     }
 
     @Then("Doktor Prescription, Description veri girisi yapildigini dogrular")
     public void doktorPrescriptionDescriptionVeriGirisiYapildiginiDogrular() {
         waitFor(3);
-        medunnaPage.prescriptionTextBox.sendKeys("Yok");
-        medunnaPage.descriptiontionTextBox.sendKeys("Yok");
-        SoftAssert softAssert = new SoftAssert();
-        softAssert.assertTrue(!medunnaPage.prescriptionTextBox.getText().isEmpty(), "Prescription veri girilmeli");
-        softAssert.assertTrue(!medunnaPage.descriptiontionTextBox.getText().isEmpty(), "Description veri girilmeli");
-        softAssert.assertAll();
+        if (medunnaPage.prescriptionTextBox.getText().isEmpty()) medunnaPage.prescriptionTextBox.sendKeys("Prescription");
+        if (medunnaPage.descriptiontionTextBox.getText().isEmpty()) medunnaPage.descriptiontionTextBox.sendKeys("Description");
+        Assert.assertTrue(!medunnaPage.prescriptionTextBox.getText().isEmpty());
+        Assert.assertTrue(!medunnaPage.descriptiontionTextBox.getText().isEmpty());
     }
 
     @Then("Doktor Status'a {string} secebildigini test eder")
     public void doktorStatusASecebildiginiTestEder(String istenenDurum) {
         waitFor(3);
+        if (medunnaPage.anamnesisTextBox.getText().isEmpty()) medunnaPage.anamnesisTextBox.sendKeys("Anamnesis");
+        if (medunnaPage.treatmentTextBox.getText().isEmpty()) medunnaPage.treatmentTextBox.sendKeys("Treatment");
+        if (medunnaPage.diagnosisTextBox.getText().isEmpty()) medunnaPage.diagnosisTextBox.sendKeys("Diagnosis", Keys.TAB);
         System.out.println("istenenDurum = " + istenenDurum);
         WebElement ddmStatus = medunnaPage.statusTextBox;
         Select options = new Select(ddmStatus);
@@ -139,9 +118,7 @@ public class US011 {
 
     @And("Doktor Create or Edit an Appointment sayfasinin acildigini test eder")
     public void doktorCreateOrEditAnAppointmentSayfasininAcildiginiTestEder() {
-        SoftAssert softAssert = new SoftAssert();
-        softAssert.assertTrue(medunnaPage.createOrEditPageYazi.getText().equals("Create or Edit an Appointment"), "Create or Edit an Appointment Sayfası açılamadı");
-        softAssert.assertAll();
+        Assert.assertTrue(medunnaPage.createOrEditPageYazi.getText().equals("Create or Edit an Appointment"));
     }
 
 

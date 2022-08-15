@@ -32,7 +32,7 @@ Feature: US011 My Appointments Doktor tarafindan duzenlenebilmeli
     Then doktor gecerli "Doctorsername" ve "DoctorPassword" ile giris yapar
     Then doktor sing in butonuna tiklar
     Then Doktor My Pages menusunden My Appointments butonunu tiklar
-    Then  Doktor "160942" id nolu hastasinin Edit buttonuna tiklar
+    Then  Doktor "160944" id nolu hastasinin Edit buttonuna tiklar
     And Doktor Anamnesis, Treatment, Diagnosis'e veri girildigini dogrular
     And Doktor Save buttonuna tiklar
     And Doktor kayit yapildigini test eder.
@@ -46,7 +46,7 @@ Feature: US011 My Appointments Doktor tarafindan duzenlenebilmeli
     Then doktor gecerli "Doctorsername" ve "DoctorPassword" ile giris yapar
     Then doktor sing in butonuna tiklar
     Then Doktor My Pages menusunden My Appointments butonunu tiklar
-    Then  Doktor "160536" id nolu hastasinin Edit buttonuna tiklar
+    Then  Doktor "160942" id nolu hastasinin Edit buttonuna tiklar
     Then Doktor Prescription, Description veri girilmedigini dogrular
     And Doktor Save buttonuna tiklar
     And Doktor kayit yapildigini test eder.
@@ -72,7 +72,7 @@ Feature: US011 My Appointments Doktor tarafindan duzenlenebilmeli
     Then doktor gecerli "Doctorsername" ve "DoctorPassword" ile giris yapar
     Then doktor sing in butonuna tiklar
     Then Doktor My Pages menusunden My Appointments butonunu tiklar
-    Then  Doktor "160942" id nolu hastasinin Edit buttonuna tiklar
+    Then  Doktor "175894" id nolu hastasinin Edit buttonuna tiklar
     Then Doktor Status'a "<istenenDurum>" secebildigini test eder
     And Doktor Save buttonuna tiklar
     And Doktor kayit yapildigini test eder.
