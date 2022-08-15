@@ -1,2 +1,0 @@
-file:src/test/resources/features/UIFeatures/US001_Registration.feature:67
-file:src/test/resources/features/UIFeatures/US004_GirisSayfasiSadeceGecerliBilgilerleErisilmeli.feature:5:17:29:41:53
