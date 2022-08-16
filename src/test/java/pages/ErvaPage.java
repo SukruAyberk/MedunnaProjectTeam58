@@ -81,6 +81,23 @@ public class ErvaPage {
     @FindBy (xpath = "//span[text()='Save']")
     public  WebElement saveButonu;
 
+    @FindBy (xpath = "//a[@class='btn btn-danger btn-sm']")
+    public WebElement deleteButton;
+
+    @FindBy(xpath = "//input[@name='adress']")
+    public WebElement hastaBilgileriGuncellemeAdressTextBoxElementi;
+
+    @FindBy(xpath = "//div[@class='Toastify__toast-container Toastify__toast-container--top-left toastify-container']")
+    public WebElement alertButton;
+
+    @FindBy (id = "hospitalmsappfrontendApp.patient.delete.question")
+    public WebElement deleteButtonConfirmation;
+
+    @FindBy (id="//input[@name='ssn']")
+    public WebElement patientSsn;
+
+
+
 
 
 
