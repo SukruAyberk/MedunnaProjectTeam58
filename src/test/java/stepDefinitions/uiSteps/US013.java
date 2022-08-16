@@ -1,22 +1,18 @@
 package stepDefinitions.uiSteps;
 
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import pages.CigdemAPage;
 import pages.OrtakLocatePages;
-import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
 public class US013 {
     OrtakLocatePages ortakLocatePages = new OrtakLocatePages();
     CigdemAPage cigdemAPage = new CigdemAPage();
-    Actions action = new Actions(Driver.getDriver());
+    Actions action;
 
     @Then("doktor My Pages menusune tiklar")
     public void doktor_my_pages_menusune_tiklar() throws InterruptedException {
@@ -40,9 +36,16 @@ public class US013 {
     }
 
     @Then("doktor Request Inpatient isteginde bulunur")
-    public void doktor_request_ınpatient_isteginde_bulunur() {
-        cigdemAPage.requestInpatientButonu.click();
+    public void doktor_request_ınpatient_isteginde_bulunur() throws InterruptedException {
+
+        ReusableMethods.waitForVisibility(cigdemAPage.yatisTalepButonu,20);
+        action=new Actions(Driver.getDriver());
+        action.click(cigdemAPage.yatisTalepButonu).perform();
+        Thread.sleep(3000);
+
         Assert.assertTrue(cigdemAPage.inpatientMessage.isDisplayed());
+
+
     }
 
     @And("doktor hastaya ait bilgileri gorur")
