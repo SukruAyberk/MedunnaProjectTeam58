@@ -43,10 +43,6 @@ public class Driver {
                     WebDriverManager.firefoxdriver().setup();
                     driver = new FirefoxDriver();
                     break;
-                case "opera":
-                    WebDriverManager.operadriver().setup();
-                    driver = new OperaDriver();
-                    break;
                 case "edge":
                     WebDriverManager.edgedriver().setup();
                     driver = new EdgeDriver();

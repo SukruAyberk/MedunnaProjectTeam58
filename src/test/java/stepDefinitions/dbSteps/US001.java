@@ -5,7 +5,6 @@ import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import utilities.DBUtils;
 import utilities.DatabaseUtility;
-
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
