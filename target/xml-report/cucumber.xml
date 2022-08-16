@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="18" time="223.63">
+    <testcase classname="Registration Ozelligi" name="TC001 kullanici gecerli bilgiler ile kayit olabilmeli" time="12.038">
+        <system-out>
+            <![CDATA[Given Kullanici Medunna ana sayfasina gider.................................passed
+And Kullanici Register butonuna tiklar......................................passed
+And Kullanici SSN kutusuna geçerli bir "SSN" numarasi girer.................passed
+And Kullanici firstname kutusuna geçerli bir "firstname" girer..............passed
+And Kullanici lastname kutusuna geçerli bir "lastname" girer................passed
+And Kullanici username kutusuna geçerli bir "username" girer................passed
+And Kullanici email kutusuna geçerli bir "email" girer......................passed
+And Kullanici password kutusuna geçerli bir "password" girer................passed
+Then Kullanici register butonuna tıklar.....................................passed
+Then Kullanici Registitaion Saved yazisinin gorunur oldugunu dogrular.......passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Registration Ozelligi" name="TC002 kullanici gecersiz SSN ile kayit olamamali" time="8.033">
+        <system-out>
+            <![CDATA[Given Kullanici Medunna ana sayfasina gider.................................passed
+And Kullanici Register butonuna tiklar......................................passed
+And Kullanici SSN kutusuna geçersiz bir "SSN" numarasi girer................passed
+And Kullanici firstname kutusuna geçerli bir "firstname" girer..............passed
+And Kullanici lastname kutusuna geçerli bir "lastname" girer................passed
+And Kullanici username kutusuna geçerli bir "username" girer................passed
+And Kullanici email kutusuna geçerli bir "email" girer......................passed
+And Kullanici password kutusuna geçerli bir "password" girer................passed
+Then Kullanici register butonuna tıklar.....................................passed
+Then Kullanici SSN hata mesajinin gorunur oldugunu dogrular.................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Registration Ozelligi" name="TC003 kullanici bos SSN ile kayit olamamali" time="7.526">
+        <system-out>
+            <![CDATA[Given Kullanici Medunna ana sayfasina gider.................................passed
+And Kullanici Register butonuna tiklar......................................passed
+And Kullanici SSN kutusunu bos birakir......................................passed
+And Kullanici firstname kutusuna geçerli bir "firstname" girer..............passed
+And Kullanici lastname kutusuna geçerli bir "lastname" girer................passed
+And Kullanici username kutusuna geçerli bir "username" girer................passed
+And Kullanici email kutusuna geçerli bir "email" girer......................passed
+And Kullanici password kutusuna geçerli bir "password" girer................passed
+Then Kullanici register butonuna tıklar.....................................passed
+Then Kullanici bos SSN hata mesajinin gorunur oldugunu dogrular.............passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Registration Ozelligi" name="TC004 kullanici bos firtsname ile kayit olamamali" time="7.928">
+        <system-out>
+            <![CDATA[Given Kullanici Medunna ana sayfasina gider.................................passed
+And Kullanici Register butonuna tiklar......................................passed
+And Kullanici SSN kutusuna geçerli bir "SSN" numarasi girer.................passed
+And Kullanici firstname kutusunu bos birakir................................passed
+And Kullanici lastname kutusuna geçerli bir "lastname" girer................passed
+And Kullanici username kutusuna geçerli bir "username" girer................passed
+And Kullanici email kutusuna geçerli bir "email" girer......................passed
+And Kullanici password kutusuna geçerli bir "password" girer................passed
+Then Kullanici register butonuna tıklar.....................................passed
+Then Kullanici bos firstname hata mesajinin gorunur oldugunu dogrular.......passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Registration Ozelligi" name="TC005 kullanici bos lastname ile kayit olamamali" time="14.825">
+        <system-out>
+            <![CDATA[Given Kullanici Medunna ana sayfasina gider.................................passed
+And Kullanici Register butonuna tiklar......................................passed
+And Kullanici SSN kutusuna geçerli bir "SSN" numarasi girer.................passed
+And Kullanici firstname kutusuna geçerli bir "firstname" girer..............passed
+And Kullanici lastname kutusunu bos birakir.................................passed
+And Kullanici username kutusuna geçerli bir "username" girer................passed
+And Kullanici email kutusuna geçerli bir "email" girer......................passed
+And Kullanici password kutusuna geçerli bir "password" girer................passed
+Then Kullanici register butonuna tıklar.....................................passed
+Then Kullanici bos lastname hata mesajinin gorunur oldugunu dogrular........passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Registration Ozelligi" name="TC006 kullanici dokuz ile baslayan SSN ile kayit olabilmeli" time="25.861">
+        <failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@class='Toastify__toast-body']&quot;}&#10;  (Session info: chrome=104.0.5112.81)&#10;For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element&#10;Build info: version: '4.1.3', revision: '7b1ebf28ef'&#10;System info: host: 'DESKTOP-6U1HIQ0', ip: '192.168.1.174', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [c251d31dd711b8148ac1ce4beee44323, findElement {using=xpath, value=//div[@class='Toastify__toast-body']}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.81, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: C:\Users\ayber\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:63642}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:63642/devtoo..., se:cdpVersion: 104.0.5112.81, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: c251d31dd711b8148ac1ce4beee44323" type="org.openqa.selenium.NoSuchElementException">
+            <![CDATA[Given Kullanici Medunna ana sayfasina gider.................................passed
+And Kullanici Register butonuna tiklar......................................passed
+And Kullanici SSN kutusuna dokuz ile başlayan bir "SSN" numarasi girer......passed
+And Kullanici firstname kutusuna geçerli bir "firstname" girer..............passed
+And Kullanici lastname kutusuna geçerli bir "lastname" girer................passed
+And Kullanici username kutusuna geçerli bir "username" girer................passed
+And Kullanici email kutusuna geçerli bir "email" girer......................passed
+And Kullanici password kutusuna geçerli bir "password" girer................passed
+Then Kullanici register butonuna tıklar.....................................passed
+Then Kullanici Registitaion Saved yazisinin gorunur oldugunu dogrular.......failed
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='Toastify__toast-body']"}
+  (Session info: chrome=104.0.5112.81)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.1.3', revision: '7b1ebf28ef'
+System info: host: 'DESKTOP-6U1HIQ0', ip: '192.168.1.174', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [c251d31dd711b8148ac1ce4beee44323, findElement {using=xpath, value=//div[@class='Toastify__toast-body']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.81, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: C:\Users\ayber\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:63642}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:63642/devtoo..., se:cdpVersion: 104.0.5112.81, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: c251d31dd711b8148ac1ce4beee44323
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:385)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:377)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at com.sun.proxy.$Proxy23.isDisplayed(Unknown Source)
+	at stepDefinitions.uiSteps.US001.kullanici_registitaion_saved_yazisinin_gorunur_oldugunu_dogrular(US001.java:91)
+	at ✽.Kullanici Registitaion Saved yazisinin gorunur oldugunu dogrular(file:///C:/Users/ayber/IdeaProjects/MedunnaProject/./src/test/resources/features/UIFeatures/US001_Registration.feature:77)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="US002" name="TC001 kullanici bos username ile kayit olamamali" time="8.088">
+        <system-out>
+            <![CDATA[Given Kullanici Medunna ana sayfasina gider.................................passed
+And Kullanici Register butonuna tiklar......................................passed
+And Kullanici SSN kutusuna geçerli bir "SSN" numarasi girer.................passed
+And Kullanici firstname kutusuna geçerli bir "firstname" girer..............passed
+And Kullanici lastname kutusuna geçerli bir "lastname" girer................passed
+And Kullanici username kutusunu bos birakir.................................passed
+And Kullanici email kutusuna geçerli bir "email" girer......................passed
+And Kullanici password kutusuna geçerli bir "password" girer................passed
+Then Kullanici register butonuna tıklar.....................................passed
+Then Kullanici bos username hata mesajinin gorunur oldugunu dogrular........passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="US002" name="TC002 kullanici bos email ile kayit olamamali" time="7.914">
+        <system-out>
+            <![CDATA[Given Kullanici Medunna ana sayfasina gider.................................passed
+And Kullanici Register butonuna tiklar......................................passed
+And Kullanici SSN kutusuna geçerli bir "SSN" numarasi girer.................passed
+And Kullanici firstname kutusuna geçerli bir "firstname" girer..............passed
+And Kullanici lastname kutusuna geçerli bir "lastname" girer................passed
+And Kullanici username kutusuna geçerli bir "username" girer................passed
+And Kullanici email kutusunu bos birakir....................................passed
+And Kullanici password kutusuna geçerli bir "password" girer................passed
+Then Kullanici register butonuna tıklar.....................................passed
+Then Kullanici bos email hata mesajinin gorunur oldugunu dogrular...........passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="US002" name="TC003 kullanici gecersiz email ile kayıt olamamali" time="7.915">
+        <system-out>
+            <![CDATA[Given Kullanici Medunna ana sayfasina gider.................................passed
+And Kullanici Register butonuna tiklar......................................passed
+And Kullanici SSN kutusuna geçerli bir "SSN" numarasi girer.................passed
+And Kullanici firstname kutusuna geçerli bir "firstname" girer..............passed
+And Kullanici lastname kutusuna geçerli bir "lastname" girer................passed
+And Kullanici username kutusuna geçerli bir "username" girer................passed
+And Kullanici email kutusuna gecersiz bir "email" girer.....................passed
+And Kullanici password kutusuna geçerli bir "password" girer................passed
+Then Kullanici register butonuna tıklar.....................................passed
+Then Kullanici gecersiz email hata mesajinin gorunur oldugunu dogrular......passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="US004 Giris Sayfasi Erisimi" name="TC001 Kullanici Giris sayfasi sadece geceli bilgilerle erisilebilir olmali" time="19.092">
+        <system-out>
+            <![CDATA[Given user "medunnaUrl" anasayfasinda.......................................passed
+Then profil sembolune tiklar................................................passed
+And singIn sekmesi tiklar...................................................passed
+And beni hatirla secenegi oldugu kontrol eder...............................passed
+And Did you forget your password secenegi oldugu kontrol eder...............passed
+And Cancel butonu oldugu kontrol eder.......................................passed
+And user gecerli "newUsername" ve "newUserPassword" ile giris yapar.........passed
+And singin butonuna basar...................................................passed
+And giris yaptigini dogrular................................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="US004 Giris Sayfasi Erisimi" name="TC002 Admin Giris sayfasi sadece geceli bilgilerle erisilebilir olmali" time="11.552">
+        <system-out>
+            <![CDATA[Given user "medunnaUrl" anasayfasinda.......................................passed
+Then profil sembolune tiklar................................................passed
+And singIn sekmesi tiklar...................................................passed
+And beni hatirla secenegi oldugu kontrol eder...............................passed
+And Did you forget your password secenegi oldugu kontrol eder...............passed
+And Cancel butonu oldugu kontrol eder.......................................passed
+And user gecerli "adminUsername" ve "adminPassword" ile giris yapar.........passed
+And singin butonuna basar...................................................passed
+And giris yaptigini dogrular................................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="US004 Giris Sayfasi Erisimi" name="TC003 Doktor Giris sayfasi sadece geceli bilgilerle erisilebilir olmali" time="10.897">
+        <system-out>
+            <![CDATA[Given user "medunnaUrl" anasayfasinda.......................................passed
+Then profil sembolune tiklar................................................passed
+And singIn sekmesi tiklar...................................................passed
+And beni hatirla secenegi oldugu kontrol eder...............................passed
+And Did you forget your password secenegi oldugu kontrol eder...............passed
+And Cancel butonu oldugu kontrol eder.......................................passed
+And user gecerli "Doctorsername" ve "DoctorPassword" ile giris yapar........passed
+And singin butonuna basar...................................................passed
+And giris yaptigini dogrular................................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="US004 Giris Sayfasi Erisimi" name="TC004 Personel Giris sayfasi sadece geceli bilgilerle erisilebilir olmali" time="10.924">
+        <system-out>
+            <![CDATA[Given user "medunnaUrl" anasayfasinda.......................................passed
+Then profil sembolune tiklar................................................passed
+And singIn sekmesi tiklar...................................................passed
+And beni hatirla secenegi oldugu kontrol eder...............................passed
+And Did you forget your password secenegi oldugu kontrol eder...............passed
+And Cancel butonu oldugu kontrol eder.......................................passed
+And user gecerli "PersonelUsername" ve "PersonelPassword" ile giris yapar...passed
+And singin butonuna basar...................................................passed
+And giris yaptigini dogrular................................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="US004 Giris Sayfasi Erisimi" name="TC005 Hasta Giris sayfasi sadece geceli bilgilerle erisilebilir olmali" time="10.922">
+        <system-out>
+            <![CDATA[Given user "medunnaUrl" anasayfasinda.......................................passed
+Then profil sembolune tiklar................................................passed
+And singIn sekmesi tiklar...................................................passed
+And beni hatirla secenegi oldugu kontrol eder...............................passed
+And Did you forget your password secenegi oldugu kontrol eder...............passed
+And Cancel butonu oldugu kontrol eder.......................................passed
+And user gecerli "HastaUsername" ve "HastaPassword" ile giris yapar.........passed
+And singin butonuna basar...................................................passed
+And giris yaptigini dogrular................................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Medunna sitesinden randevu alma" name="Kullanici gecerli bilgilerle randevu olusturabilmeli" time="10.718">
+        <system-out>
+            <![CDATA[Given user "medunnaUrl" anasayfasinda.......................................passed
+Then Kullanici Make an Appointment butonuna tiklar..........................passed
+And kullanici Make an Appointment bolumune gittigini dogrular...............passed
+And Kullanici First Name kismini bos birakamadigini gorur...................passed
+And Kullanici Last Name kismini bos birakamadigini gorur....................passed
+And Kullanici SSN kismini bos birakamadigini gorur..........................passed
+And Kullanici Mail kismini bos birakamadigini gorur.........................passed
+And Kullanici Phone kismini bos birakamadigini gorur........................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Medunna sitesinden randevu alma" name="Kullanici gecerli bilgilerle randevu olusturabilmeli 2" time="11.455">
+        <system-out>
+            <![CDATA[Given user "medunnaUrl" anasayfasinda.......................................passed
+Then Kullanici tekrar Make an Appointment butonuna tiklar...................passed
+And kullanici tekrar Make an Appointment bolumune gittigini dogrular........passed
+And Kullanici First Name kismina random bir karakter girer..................passed
+And Kullanici Last Name kismina random bir karakter girer...................passed
+And Kullanici SSN kismina kayıtlı bir ssn girer.............................passed
+And Kullanici Mail kismina random bir mail girer............................passed
+And Kullanici Phone kismina 3. ve 6. rakamdan sonra "-" olan 10 haneli bir telefon numarasi girer.passed
+And Kullanici "Send an Appoinment Request" butonuna tiklayarak randevu alir.passed
+And Kullanici çıkan kaydınız oluşturuldu mesajını görerek kaydı tamamlar....passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Medunna sitesinden randevu alma" name="patient aldigi randevuyu goruntuleyebilmeli" time="19.646">
+        <system-out>
+            <![CDATA[Given user "medunnaUrl" anasayfasinda.......................................passed
+Then profil sembolune tiklar................................................passed
+Then singIn sekmesi tiklar..................................................passed
+Then user gecerli "HastaUsername" ve "HastaPassword" ile giris yapar........passed
+Then user sing in butonuna tiklar...........................................passed
+Then patient "My pages" butonuna tiklar.....................................passed
+Then patient "my appointment" butonuna tiklayar.............................passed
+Then patient "Appointment" basliginda randevularini goruntuler..............passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="US10_My Appointments for Physician(Doctor) and Validate appoinments with API and DB" name="TC001_User (doctor) can see their appointments list and time slots on My Appointments" time="17.854">
+        <system-out>
+            <![CDATA[Given user "medunnaUrl" anasayfasinda.......................................passed
+Then profil sembolune tiklar................................................passed
+Then singIn sekmesi tiklar..................................................passed
+Then user gecerli "Doctorsername" ve "DoctorPassword" ile giris yapar.......passed
+Then user sing in butonuna tiklar...........................................passed
+Then doktor My Pages menusune tiklar........................................passed
+Then doktor My Appointments sekmesine tiklar................................passed
+Then Doktor  appointments list  gorebildigini test eder.....................passed
+Then Doktor  time slots gorebildigini test eder.............................passed
+And Doktor patient id, start date, end date, status bilgilerini gorebildigini test eder.passed
+]]>
+        </system-out>
+    </testcase>
+</testsuite>
