@@ -1,4 +1,3 @@
-@Smoketest
 @US01_DBRegistration
 Feature: database features
 

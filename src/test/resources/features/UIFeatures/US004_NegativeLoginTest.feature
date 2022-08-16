@@ -1,3 +1,4 @@
+@smokeTest
 @us004negative
 Feature: US004 Giris Sayfasi Erisimi
 
