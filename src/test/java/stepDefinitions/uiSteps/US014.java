@@ -1,18 +1,13 @@
 package stepDefinitions.uiSteps;
 
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import pages.CigdemAPage;
 import pages.OrtakLocatePages;
-import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
@@ -76,7 +71,7 @@ public class US014 {
 
         Assert.assertFalse(cigdemAPage.roomGuncellemeYazisi.isDisplayed());
 
-        String hastaRoomId=cigdemAPage.hastaRoomİd.getText();
+        String hastaRoomId=cigdemAPage.hastaRoomId.getText();
         System.out.println("hastaRoomId = " + hastaRoomId);
  //Doktor rezerve edilmis odayı guncellemek istediginde bos oda varsa onu ataybiliyor, guncelleme mesaji gelemesine ragmen oda numarasi degismiyor!!!
     }

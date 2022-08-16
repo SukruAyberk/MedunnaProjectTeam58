@@ -52,4 +52,4 @@ And staff Search Patient butonunu tiklar
   Scenario: TC008 Staff hastaları SSN kimliklerine gore arayabilmeli
 
     And staff 'Patient SSN' butonunu tiklar
-    And staff 'Patient SSN' kutusundan SSN kimliklere göre arar
+    And staff 'Patient SSN' kutusundan SSN kimliklere gore arar
