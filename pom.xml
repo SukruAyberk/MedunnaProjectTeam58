@@ -99,7 +99,7 @@
                             <outputDirectory>${project.build.directory}</outputDirectory>
                             <inputDirectory>${project.build.directory}</inputDirectory>
                             <jsonFiles>
-                                <param>**/json-reports/*.json</param>
+                                <param>*/json-reports/.json</param>
                             </jsonFiles>
                             <classificationFiles>->
                                 <param>sample.properties</param>
@@ -117,7 +117,7 @@
                     <testFailureIgnore>true</testFailureIgnore>
                     <skipTests>false</skipTests>
                     <includes>
-                        <include>**/runners/*Runner*.java</include>
+                        <include>*/runners/*Runner.java</include>
                     </includes>
                 </configuration>
             </plugin>
@@ -136,7 +136,7 @@
                     <argLine>-Dfile.encoding=UTF-8</argLine>
                     <useFile>false</useFile>
                     <includes>
-                        <include>**/runners/*Runner*.java</include>
+                        <include>*/runners/*Runner.java</include>
                     </includes>
                     <testFailureIgnore>true</testFailureIgnore>
                 </configuration>

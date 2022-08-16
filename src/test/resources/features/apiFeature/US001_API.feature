@@ -1,4 +1,4 @@
-
+@smokeTest
 @APItests
 Feature: US001 get all registrant information using API, swagger documentation an validate them
 
