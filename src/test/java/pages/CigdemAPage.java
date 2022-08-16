@@ -15,7 +15,7 @@ public class CigdemAPage {
     @FindBy(xpath = "(//a[@class='dropdown-item'])[3]")
     public WebElement myInpatient;
 
-    @FindBy(xpath = "//span[text()='Edit']")
+    @FindBy(xpath = "//tr[1]/td[13]//span/span")
     public WebElement appointmentEditButonu;
 
     @FindBy(xpath = "//*[text()='Show Test Results']")

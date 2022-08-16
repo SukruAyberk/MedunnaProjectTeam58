@@ -32,7 +32,7 @@ public class US014 {
     }
     @Then("doktor hastalara ait bilgilerini goruntuler")
     public void doktor_hastalara_ait_bilgilerini_goruntuler() {
-        WebElement hastaBilgiTablosu = Driver.waitForVisibility(cigdemAPage.hastaBilgileri, 10);
+        WebElement hastaBilgiTablosu = ReusableMethods.waitForVisibility(cigdemAPage.hastaBilgileri, 10);
         System.out.println(hastaBilgiTablosu.getText());
         Assert.assertTrue(cigdemAPage.hastaBilgileri.isDisplayed());
 

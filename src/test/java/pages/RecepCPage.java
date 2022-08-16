@@ -81,6 +81,6 @@ public class RecepCPage {
     @FindBy(xpath = "//a[@class='btn btn-success btn-sm']")
     public WebElement requestATest;
 
-    @FindBy (xpath = "//div[@class='invalid-feedback']")
+    @FindBy(xpath = "//div[@class='invalid-feedback']")
     public WebElement thisfiledMessage;
 }

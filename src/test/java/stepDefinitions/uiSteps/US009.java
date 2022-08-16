@@ -12,11 +12,12 @@ import utilities.Driver;
 import static utilities.ReusableMethods.waitFor;
 
 public class US009 {
-    OrtakLocatePages ortakLocatePages= new OrtakLocatePages();
-    ErvaPage ervaPage= new ErvaPage();
+    OrtakLocatePages ortakLocatePages = new OrtakLocatePages();
+    ErvaPage ervaPage = new ErvaPage();
 
     @Then("staff My Pages menusune tiklar")
-    public void staff_my_pages_menusune_tiklar() { ortakLocatePages.myPagesButonu.click();
+    public void staff_my_pages_menusune_tiklar() {
+        ortakLocatePages.myPagesButonu.click();
     }
 
     @And("staff Search Patient butonunu tiklar")
@@ -40,18 +41,18 @@ public class US009 {
     public void staffHastaBilgilerininDuzenlenebilirOldugunuTestEder() {
         waitFor(5);
         Assert.assertTrue(ervaPage.id.isEnabled());
-    Assert.assertTrue(ervaPage.firstName.isEnabled());
-    Assert.assertTrue(ervaPage.lastname.isEnabled());
-    Assert.assertTrue(ervaPage.birthDate.isEnabled());
-    Assert.assertTrue(ervaPage.email.isEnabled());
-    Assert.assertTrue(ervaPage.phone.isEnabled());
-    Assert.assertTrue(ervaPage.gender.isEnabled());
-    Assert.assertTrue(ervaPage.bloodGroup.isEnabled());
-    Assert.assertTrue(ervaPage.adress.isEnabled());
-    Assert.assertTrue(ervaPage.description.isEnabled());
-    Assert.assertTrue(ervaPage.user.isEnabled());
-    Assert.assertTrue(ervaPage.country.isEnabled());
-    Assert.assertTrue(ervaPage.stateCity.isEnabled());
+        Assert.assertTrue(ervaPage.firstName.isEnabled());
+        Assert.assertTrue(ervaPage.lastname.isEnabled());
+        Assert.assertTrue(ervaPage.birthDate.isEnabled());
+        Assert.assertTrue(ervaPage.email.isEnabled());
+        Assert.assertTrue(ervaPage.phone.isEnabled());
+        Assert.assertTrue(ervaPage.gender.isEnabled());
+        Assert.assertTrue(ervaPage.bloodGroup.isEnabled());
+        Assert.assertTrue(ervaPage.adress.isEnabled());
+        Assert.assertTrue(ervaPage.description.isEnabled());
+        Assert.assertTrue(ervaPage.user.isEnabled());
+        Assert.assertTrue(ervaPage.country.isEnabled());
+        Assert.assertTrue(ervaPage.stateCity.isEnabled());
         waitFor(5);
     }
 
@@ -91,7 +92,7 @@ public class US009 {
     public void staffKayitBilgileriniSilerVeSaveButonunaTiklar() {
         Actions actions = new Actions(Driver.getDriver());
         actions.sendKeys(Keys.PAGE_DOWN).perform();
-        Driver.waitAndClick(ervaPage.saveButonu);
+        ervaPage.saveButonu.click();
         waitFor(5);
     }
 
