@@ -1,6 +1,5 @@
 #  username should be validated using api
 #  email should be validated with API and DB
-@smokeTest
 @ApiRegistrant
 Feature: api validation
   Scenario: verify username and email by api
